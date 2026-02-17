@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor 360 - Recetas Colombianas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="img/logo.png" alt="Sabor 360 Logo">
+            </a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">¿Quiénes Somos?</a></li>
+                <li><a href="#videos">Videos/Podcasts</a></li>
+                <li><a href="#recetas">Recetas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div>
+            <h1>¡Bienvenidos a Sabor 360!</h1>
+            <p>Descubre el auténtico sabor de la cocina colombiana con nuestras recetas tradicionales del Valle del Cauca. Cada plato cuenta una historia, cada sabor despierta un recuerdo.</p>
+        
+        </div>
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos">
+        <h2 class="section-title">¿Quiénes Somos?</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Sabor 360: El Ecosistema Gastronómico de Colombia</h3>
+                <p>
+                    Somos una <strong>central de contenidos multiplataforma</strong> diseñada para ser el referente de la industria. No solo hablamos de comida; ponemos infraestructura técnica de alto nivel al servicio de la narrativa gastronómica.
+                </p>
+
+                <p>
+                    Acompañados por nuestro <em>Dream Team</em>, como el <strong>Chef Carlos Yanguas</strong> y la nutricionista <strong>Camila Duque</strong>, exploramos desde noticias diarias hasta la profundidad de la <strong>Gastronomía Regenerativa</strong>: mostrando la trazabilidad desde el productor y la tierra hasta el impacto social.
+                </p>
+    
+    </section>
+
+    <!-- Videos y Podcasts -->
+    <section id="videos">
+        <h2 class="section-title">Videos y Podcasts</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400&h=300&fit=crop" alt="Video Sancocho">
+                    <div class="play-button"></div>
+                </div>
+                <div class="video-info">
+                    <h3>Secretos del Sancocho Valluno</h3>
+                    <p>Aprende a preparar el auténtico sancocho con todos sus secretos tradicionales.</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=400&h=300&fit=crop" alt="Video Empanadas">
+                    <div class="play-button"></div>
+                </div>
+                <div class="video-info">
+                    <h3>Empanadas Perfectas</h3>
+                    <p>La técnica perfecta para hacer empanadas crujientes y deliciosas.</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&h=300&fit=crop" alt="Podcast">
+                    <div class="play-button"></div>
+                </div>
+                <div class="video-info">
+                    <h3>Podcast: Historia del Manjar Blanco</h3>
+                    <p>Conoce la fascinante historia detrás del postre más emblemático del Valle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recetas -->
+    <section id="recetas">
+        <h2 class="section-title">Recetas Paso a Paso</h2>
+        <div class="recipe-filters">
+            <button class="filter-btn active" data-filter="todas">Todas</button>
+            <button class="filter-btn" data-filter="desayuno">Desayuno</button>
+            <button class="filter-btn" data-filter="almuerzo">Almuerzo</button>
+            <button class="filter-btn" data-filter="cena">Cena</button>
+            <button class="filter-btn" data-filter="postres">Postres</button>
+        </div>
+
+        <div class="recipes-grid" id="recipesGrid">
+            <!-- Las recetas se generarán dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Modal de Receta -->
+    <div class="modal" id="recipeModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <div class="recipe-meta" id="modalMeta"></div>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" class="modal-image" src="" alt="">
+                <h3 class="ingredientes-title">Ingredientes</h3>
+                <ul class="ingredientes-list" id="modalIngredientes"></ul>
+                <h3 class="preparacion-title">Preparación</h3>
+                <ol class="pasos-list" id="modalPreparacion"></ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Sabor 360. Todos los derechos reservados. Hecho con ❤️ en Colombia</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
