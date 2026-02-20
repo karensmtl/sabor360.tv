@@ -1,65 +1,69 @@
 /* ========================
    DATA: NOTICIAS
-   Para agregar/editar noticias, modifica este array.
-   Cada noticia tiene:
-     - id, categoria, fecha, titulo, extracto, cuerpo (HTML), imagen, autor
 ======================== */
 const noticias = [
     {
         id: 1,
         categoria: "gestion",
         categoriaLabel: "Gestión",
-        fecha: "18 de febrero de 2026",
-        titulo: "Inundaciones en Córdoba amenazan con disparar aún más el precio de la carne en Colombia",
-        extracto: "Las recientes inundaciones en el departamento de Córdoba, uno de los principales productores ganaderos del país, generan alertas sobre posibles aumentos en el precio de la carne para los próximos meses.",
+        fecha: "20 de febrero de 2026",
+        titulo: "El invierno en Córdoba, puede generar el aumento de los precios de la carne",
+        extracto: "Las fuertes lluvias que han azotado al departamento de Córdoba y a otras regiones del Caribe colombiano no solo ha generado una gran crisis humanitaria y económica, sino que  también se ve en amenaza el aumento a los precios de la carne en el país durante lo que resta de 2026.",
         imagen: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=800&h=500&fit=crop",
         autor: "Redacción Sabor 360",
         destacado: true,
         cuerpo: `
-            <p>Las fuertes lluvias que golpean al departamento de <strong>Córdoba</strong> desde las últimas semanas están generando una alarma en el sector ganadero colombiano. Según reportes de la Federación Colombiana de Ganaderos (Fedegán), miles de hectáreas de praderas han quedado bajo el agua, afectando directamente a los inventarios de ganado bovino.</p>
-            <p>El panorama es preocupante para los comercializadores de carne en todo el país. Córdoba representa aproximadamente el <strong>12% del inventario ganadero nacional</strong>, y cualquier afectación en su productividad se traduce directamente en presión sobre los precios al consumidor final.</p>
-            <blockquote>"Si no hay una respuesta rápida de las autoridades y del sector asegurador, vamos a ver un incremento de entre el 15% y el 25% en el precio de la carne en canal durante los próximos dos meses", advirtió un representante gremial.</blockquote>
-            <h2>Impacto en restaurantes y sector HORECA</h2>
-            <p>Para el sector de restaurantes y servicios de alimentación, esta situación representa un desafío adicional en un contexto donde los márgenes ya son ajustados. Chefs y administradores de restaurantes en ciudades como Bogotá, Medellín y Cali están explorando alternativas proteicas y ajustando sus menús de temporada.</p>
-            <p>Expertos recomiendan diversificar los proveedores, explorar cortes alternativos de menor costo y ajustar las cartas sin sacrificar la calidad de la propuesta gastronómica.</p>
+            <p>Según los datos más recientes de la Federación Colombiana de Ganaderos (Fedegán), las inundaciones han dejado más de 3.100 reses muertas y aproximadamente 546.000 animales afectados en el sector pecuario nacional, con un impacto especialmente grave en Córdoba, donde miles de predios y hectáreas de pasturas están bajo el agua.</p>
+            <p>Córdoba es una de las regiones más importantes de Colombia para la producción de ganado, dando un aporte  considerable al inventario nacional. La combinación de animales muertos, ganado debilitado por el estrés hídrico y la destrucción de pasturas pone en riesgo la oferta de carne disponible para sacrificio y procesamiento. </p>
+            <blockquote>"Además de las pérdidas directas, expertos advierten que, incluso cuando el agua se retire, la recuperación de pastos y la reincorporación de los animales afectados al ciclo productivo se van a tomar meses de trabajo, lo que podría traducirse en una disminución sostenida en la oferta de carne.</blockquote>
+            <img src="img/carne.jpg" alt="Ganado en Córdoba" style="width: 100%; border-radius: 8px; margin: 20px 0;">
+            
+            <p>Antes de la emergencia, el precio de la carne de res ya venía presentando subidas sustanciales dentro de la canasta familiar colombiana. En enero de 2026, por ejemplo, la carne registró una variación anual de casi 11,7%, muy por encima de la inflación general de alimentos.
+            Con la oferta más limitada y los costos de producción aumentando —por pérdidas de ganado, pasto y logística— analistas del sector ganadero advierten  que es probable que estos factores se reflejen en nuevos ajustes al alza en los precios que pagan los colombianos  en supermercados y carnicerías durante los próximos meses. </p>
         `
     },
     {
         id: 2,
         categoria: "negocios",
         categoriaLabel: "Negocios",
-        fecha: "18 de febrero de 2026",
-        titulo: "McDonald's elimina los sachets de salsa en sus restaurantes de Chile",
-        extracto: "La multinacional de comida rápida da un paso hacia la sostenibilidad eliminando los sobres individuales de salsas en sus más de 100 locales en Chile, reemplazándolos por dispensadores reutilizables.",
-        imagen: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&h=500&fit=crop",
+        fecha: "20 de febrero de 2026",
+        titulo: "McDonald's de Chile, le apuesta al medio ambiente",
+        extracto: "Desde la “cajita feliz” hasta la construcción de restaurantes con madera sostenible",
+        imagen: "img/mac.jpg",
         autor: "Redacción Sabor 360",
         destacado: true,
         cuerpo: `
-            <p><strong>McDonald's Chile</strong> anunció la eliminación progresiva de los tradicionales sachets de salsa en todos sus restaurantes del país, en un movimiento que la compañía califica como parte de su estrategia global de sostenibilidad y reducción de residuos plásticos.</p>
-            <p>La medida, que comenzó a implementarse de forma piloto en algunos locales de Santiago, consiste en reemplazar los sobres individuales de salsas como ketchup, mostaza y mayonesa por dispensadores reutilizables ubicados en las mesas y zonas de autoservicio.</p>
-            <h2>Tendencia regional</h2>
-            <p>Esta decisión se alinea con una tendencia que ya han adoptado cadenas de restaurantes en Europa y algunos mercados de Latinoamérica. En Colombia, varias cadenas de comida rápida están evaluando medidas similares ante las nuevas regulaciones sobre plásticos de un solo uso.</p>
-            <blockquote>"Cada año generamos toneladas de residuos solo en sachets. Este cambio es pequeño pero su impacto acumulado es enorme", señaló la directiva de sustentabilidad de la compañía.</blockquote>
-            <p>La decisión también tiene implicaciones económicas: los dispensadores representan una inversión inicial mayor, pero reducen significativamente el costo por porción a mediano plazo.</p>
+            <p><strong>La franquicia</strong> de comida más grande a nivel mundial McDonalds Chile da otro gran paso al cuidado del medio ambiente implementando un robot de reciclaje, un restaurante 100% de madera sostenible y la eliminación de los sachets de las salsas. 
+</p>
+            <p>Su robot sostenible busca que los niños y niñas junto con sus familias hagan parte del reciclaje de cajitas felices de forma entretenida y educativa, esta acción la están realizando en alianza con ReSimple. Funciona de manera que las niñas y niños depositan sus cajitas vacías en el contenedor con forma de robot, y este luego es retirado por ReSimple para llevar los materiales a plantas recicladoras, donde se convierten en nueva materia prima, promoviendo así la economía circular.</p>
+            <p>A su vez cuentan con un restaurante en la ciudad de Temuco que fue construido 100% con madera sostenible. Este proyecto pionero en la industria de la comida rápida demuestra su conexión con la región y sus valiosos recursos renovables. Fue una construcción responsable y eficiente a cargo de los arquitectos de Vial Ag, que demoró 10 días, y permitió completar la construcción total en solo 120 días, con madera certificada FSC y PEFC; siendo una alternativa sostenible frente al uso de materiales tradicionales.</p>
+
+            <img src="img/mac1.jpg" alt="Ganado en Córdoba" style="width: 100%; border-radius: 8px; margin: 20px 0;">
+
+            <blockquote>"El restaurante implementa 23 medidas sustentables, como el uso de energía solar, reciclaje de materiales y la instalación de cargadores de autos eléctricos. Estas medidas son parte de nuestra estrategia “Receta del Futuro”, que busca minimizar el impacto ambiental.</blockquote>
+            <p>Como parte también de su estrategia para cuidar el medio ambiente decidieron eliminar los sachets de las salsas de sus locales, la persona que quiera acompañar sus papas o hamburguesas con salsa deben acercarse a los dispensadores que han situado al lado del sector de retiro de pedidos. 
+Con estas y más estrategias que ha utilizado Mcdonalds Chile busca posicionarse como una que cuida y protege el medio ambiente.
+</p>
         `
     },
     {
         id: 3,
         categoria: "contexto",
         categoriaLabel: "Contexto",
-        fecha: "17 de febrero de 2026",
-        titulo: "Nuevo decreto Salario Mínimo: ¿Puede el Gobierno fijar un aumento por encima del porcentaje suspendido?",
-        extracto: "La controversia jurídica alrededor del salario mínimo 2026 abre un debate sobre los límites del poder ejecutivo y su impacto en el sector de restaurantes y servicios.",
-        imagen: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=500&fit=crop",
+        fecha: "20 de febrero de 2026",
+        titulo: "En 2026 Qbano, le apuesta al sándwich engallado.",
+        extracto: "El objetivo de la marca caleña es crecer un 15%",
+        imagen: "img/qb.jpg",
         autor: "Redacción Sabor 360",
         destacado: false,
         cuerpo: `
-            <p>La suspensión provisional del decreto que fijó el salario mínimo para 2026 por parte del Consejo de Estado ha generado un escenario de incertidumbre jurídica y económica que afecta directamente a los empresarios del sector HORECA en Colombia.</p>
-            <p>El debate central gira en torno a si el Gobierno Nacional tiene facultades para expedir un nuevo decreto que mantenga o incluso supere el porcentaje de aumento inicialmente fijado, mientras el proceso judicial continúa su curso.</p>
-            <h2>Impacto en el sector gastronómico</h2>
-            <p>Para los restaurantes, que en su mayoría emplean trabajadores con el salario mínimo como base, la incertidumbre complica la planeación financiera del año. Muchos establecimientos ya hicieron ajustes en sus estructuras de costos asumiendo el incremento inicial.</p>
-            <blockquote>"No podemos planear con incertidumbre. Necesitamos claridad jurídica para tomar decisiones de contratación y de precios", expresó un empresario del sector en Bogotá.</blockquote>
-            <p>Los expertos laboralistas consultados por Sabor 360 coinciden en que el Gobierno tiene opciones legales para actuar, pero advierten que cualquier nuevo decreto podría enfrentar impugnaciones similares.</p>
+            <p>La marca colombiana de <strong>sándwich Qbano</strong> inició este año con toda al lanzar su campaña “Engallado”, una edición especial del sándwich ropa vieja con 60% más de proteína lograron vender mas de 50.000 unidades a nivel nacional en 10 días, obteniendo y cumpliendo al 200% las expectativas presupuestadas para este 2026, las cuales constaban de un incremento de ventas de doble digito, proyección a un 15% superior al 2025.</p>
+            <p>Esta campaña ha impulsado a que la empresa colombiana empezara a trazar objetivos mas ambiciosos en todos sus puntos de venta a nivel nacional. La meta es de elevar las ventas en más de un 10% en los puntos físicos, la mejora continua del consumidor y la expansión sostenida de la presencia de la marca en el mercado.</p>
+            <blockquote>"Según Pilar Amorocho, gerente general de FSQ Group, operador de Qbano, dice que la estrategia para este año combinará la esencia tradicional de sus productos con la innovación necesaria para llamar la atención de nuevos segmentos. Su famosa salsa seguirá siendo un elemento distintivo de la marca.</blockquote>
+            <p>Además, se buscará equilibrar el ticket promedio y el incremento constante de transacciones, cuidando la competitividad frente a los hábitos de consumo actuales, también se buscará la fidelización de las audiencias jóvenes. </p>
+            
+Fotos: www.sandwichqbano.com 
+
         `
     },
     {
@@ -94,15 +98,10 @@ const noticias = [
         cuerpo: `
             <p>La reconocida marca de agua italiana <strong>S. Pellegrino</strong> vuelve a abrir la convocatoria para su séptima edición del <em>S. Pellegrino Young Chef Academy Competition</em>, un concurso que busca reconocer y proyectar la nueva generación de chefs a nivel mundial.</p>
             <p>Esta convocatoria está dirigida para los cocineros <strong>menores de 30 años</strong>, donde podrán desarrollar e impulsar su talento por medio de las mentorías de grandes figuras del mundo culinario.</p>
-            <p>Las inscripciones están abiertas por cuatro meses a participantes de todo el mundo, divididas en <strong>15 regiones globales</strong>, lo que logra una representación variada del talento culinario. Los preseleccionados serán evaluados por la escuela internacional de artes culinarias en Italia, <strong>ALMA</strong>.</p>
+            <p>Las inscripciones están abiertas por cuatro meses a participantes de todo el mundo, divididas en <strong>15 regiones globales</strong>. Los preseleccionados serán evaluados por la escuela internacional de artes culinarias en Italia, <strong>ALMA</strong>.</p>
             <h2>Etapas del concurso</h2>
-            <p>Posteriormente, los seleccionados participan en finales regionales y los ganadores pasarán a competir en la gran final, donde se elige al ganador global. En el transcurso de la competencia se estarán evaluando tres elementos claves: <strong>creatividad, habilidad técnica y creencia personal.</strong></p>
-            <h2>Premios adicionales</h2>
-            <p>Los participantes no solo tienen la oportunidad de participar por el premio principal, sino también por tres premios adicionales:</p>
-            <p><strong>Premio a la responsabilidad social S. Pellegrino:</strong> lo otorga la asociación de restaurantes sostenibles que gestiona el programa Food Made Good, entregado a quien represente que la comida es mejor cuando es resultado de prácticas socialmente responsables.</p>
-            <p><strong>Premio Acqua Panna Connection in Gastronomy:</strong> otorgado por votación de los mentores a quien logre representar su cultura tradicional de la región con visión moderna, creando un enlace entre pasado y futuro.</p>
-            <p><strong>Premio Fine Dining Lovers:</strong> otorgado por Fine Dining Lovers Insider, un grupo de periodistas y expertos que identifican cualidades en los platos y escogen el que logre inspirar a un público más amplio.</p>
-            <blockquote>Con la séptima edición, S. Pellegrino reafirma su compromiso con la nueva generación de la alta cocina internacional y consolida su papel como impulsor de talento joven en la industria gastronómica.</blockquote>
+            <p>Los seleccionados participan en finales regionales y los ganadores pasarán a competir en la gran final. Se evaluarán tres elementos claves: <strong>creatividad, habilidad técnica y creencia personal.</strong></p>
+            <blockquote>Con la séptima edición, S. Pellegrino reafirma su compromiso con la nueva generación de la alta cocina internacional.</blockquote>
         `
     },
     {
@@ -116,12 +115,11 @@ const noticias = [
         autor: "Equipo Sabor 360",
         destacado: false,
         cuerpo: `
-            <p>La <strong>Gastronomía Regenerativa</strong> está tomando fuerza en Colombia como un movimiento que va más allá de lo orgánico o sostenible. Se trata de un enfoque integral que considera el impacto de cada ingrediente desde la semilla hasta el plato, pasando por el bienestar del productor y la salud del suelo.</p>
-            <p>En el Valle del Cauca, chefs como <strong>Carlos Yanguas</strong> están liderando esta transformación, estableciendo relaciones directas con agricultores locales y visibilizando ingredientes nativos que habían quedado al margen de la gastronomía comercial.</p>
+            <p>La <strong>Gastronomía Regenerativa</strong> está tomando fuerza en Colombia como un movimiento que va más allá de lo orgánico o sostenible.</p>
+            <p>En el Valle del Cauca, chefs como <strong>Carlos Yanguas</strong> están liderando esta transformación, estableciendo relaciones directas con agricultores locales y visibilizando ingredientes nativos.</p>
             <blockquote>"Cuando sabemos de dónde viene cada ingrediente, la historia que tiene y las manos que lo cultivaron, cocinamos diferente. Y eso se siente en el plato", explica Yanguas.</blockquote>
             <h2>El papel de la nutrición</h2>
-            <p>La nutricionista <strong>Camila Duque</strong> complementa esta visión desde la ciencia: "No podemos hablar de gastronomía regenerativa sin hablar de nutrición. Un suelo saludable produce alimentos más nutritivos, y eso tiene un impacto directo en la salud de quienes los consumen."</p>
-            <p>Este enfoque está comenzando a permear los menús de restaurantes en Cali, Bogotá y Medellín, donde cada vez más chefs incluyen en sus cartas la procedencia de los ingredientes como parte de la experiencia gastronómica.</p>
+            <p>La nutricionista <strong>Camila Duque</strong> complementa esta visión desde la ciencia: "Un suelo saludable produce alimentos más nutritivos, y eso tiene un impacto directo en la salud de quienes los consumen."</p>
         `
     }
 ];
@@ -134,6 +132,30 @@ let slideTimer = null;
 let currentFilter = 'todas';
 const sliderArticles = noticias.filter(n => n.destacado);
 
+/* ========================
+   PAGES
+======================== */
+const ALL_PAGES = ['page-home', 'page-videos', 'page-quienes', 'page-article'];
+
+function showSection(sec) {
+    ALL_PAGES.forEach(p => {
+        const el = document.getElementById(p);
+        if (el) el.style.display = 'none';
+    });
+    const target = document.getElementById('page-' + sec);
+    if (target) target.style.display = 'block';
+
+    // Solo marcar active el link que coincida exactamente
+    document.querySelectorAll('.nav-links a').forEach(a => {
+        if (sec === 'home') {
+            a.classList.toggle('active', a.dataset.sec === 'home' && !a.dataset.cat);
+        } else {
+            a.classList.toggle('active', a.dataset.sec === sec);
+        }
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 /* ========================
    SLIDER
 ======================== */
@@ -187,11 +209,9 @@ function renderNews(filter = 'todas') {
     currentFilter = filter;
     const filtered = filter === 'todas' ? noticias : noticias.filter(n => n.categoria === filter);
 
-    // Label
     const labels = { todas: 'Todas', noticias: 'Noticias', negocios: 'Negocios', gestion: 'Gestión', contexto: 'Contexto', liderazgo: 'Liderazgo', eventos: 'Eventos' };
     document.getElementById('activeFilterLabel').textContent = labels[filter] || filter;
 
-    // Grid: first = featured, next 2 = standard
     const grid = document.getElementById('newsGrid');
     const gridItems = filtered.slice(0, 3);
     grid.innerHTML = gridItems.map((n, i) => {
@@ -218,10 +238,8 @@ function renderNews(filter = 'todas') {
             </div>`;
     }).join('');
 
-    // List: remaining
     const list = document.getElementById('newsList');
-    const listItems = filtered.slice(3);
-    list.innerHTML = listItems.map(n => `
+    list.innerHTML = filtered.slice(3).map(n => `
         <div class="news-list-item" onclick="openArticle(${n.id})">
             <img src="${n.imagen}" alt="${n.titulo}" loading="lazy">
             <div>
@@ -237,7 +255,6 @@ function renderNews(filter = 'todas') {
    SIDEBAR
 ======================== */
 function renderSidebar() {
-    // Most read = first 4
     const mr = document.getElementById('sidebarMostRead');
     mr.innerHTML = noticias.slice(0, 4).map(n => `
         <div class="sidebar-card" onclick="openArticle(${n.id})">
@@ -249,7 +266,6 @@ function renderSidebar() {
         </div>
     `).join('');
 
-    // Events
     const ev = document.getElementById('sidebarEvents');
     const events = noticias.filter(n => n.categoria === 'eventos');
     ev.innerHTML = events.map(n => `
@@ -282,7 +298,7 @@ function openArticle(id) {
             <span>${noticia.fecha}</span>
         </div>
         <img class="article-hero-img" src="${noticia.imagen}" alt="${noticia.titulo}">
-        <div class="article-img-caption">Foto ilustrativa / Sabor 360</div>
+        <div class="article-img-caption">Foto iA / Sabor 360</div>
         <div class="article-body">
             <p><strong>${noticia.extracto}</strong></p>
             ${noticia.cuerpo}
@@ -301,27 +317,33 @@ function openArticle(id) {
         </div>
     `;
 
-    document.getElementById('page-home').style.display = 'none';
-    document.getElementById('page-article').style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function goHome() {
-    document.getElementById('page-home').style.display = 'block';
-    document.getElementById('page-article').style.display = 'none';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    showSection('article');
 }
 
 /* ========================
-   FILTER
+   NAVIGATION
 ======================== */
+function goHome() {
+    showSection('home');
+}
+
 function filterCat(cat) {
-    currentFilter = cat;
+    renderNews(cat);
+    showSection('home');
     document.querySelectorAll('.nav-links a').forEach(a => {
         a.classList.toggle('active', a.dataset.cat === cat);
     });
-    renderNews(cat);
-    goHome();
+}
+
+/* ========================
+   TABS (Videos/Podcast)
+======================== */
+function switchTab(name, btn) {
+    document.querySelectorAll('.extra-tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.extra-tab-btn').forEach(b => b.classList.remove('active'));
+    const tab = document.getElementById('tab-' + name);
+    if (tab) tab.classList.add('active');
+    btn.classList.add('active');
 }
 
 /* ========================
@@ -340,6 +362,25 @@ function setDate() {
 }
 
 /* ========================
+   TICKER JS
+======================== */
+function initTicker() {
+    const ticker = document.querySelector('.ticker-content');
+    if (!ticker) return;
+    ticker.style.display = 'inline-block';
+    let pos = window.innerWidth;
+    
+    function move() {
+        pos -= 1.5;
+        if (pos < -ticker.offsetWidth) pos = window.innerWidth;
+        ticker.style.position = 'relative';
+        ticker.style.left = pos + 'px';
+        requestAnimationFrame(move);
+    }
+    move();
+}
+
+/* ========================
    INIT
 ======================== */
 document.addEventListener('DOMContentLoaded', () => {
@@ -347,4 +388,5 @@ document.addEventListener('DOMContentLoaded', () => {
     renderNews();
     renderSidebar();
     setDate();
+    initTicker();
 });
