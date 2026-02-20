@@ -3,132 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabor 360 - Recetas Colombianas</title>
+    <title>Sabor 360 - Gastronomía Colombiana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@300;400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="#" class="logo">
-                <img src="img/logo.png" alt="Sabor 360 Logo">
-            </a>
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+
+<!-- HEADER -->
+<header>
+    <div class="header-top">
+        <a class="logo-area" href="#" onclick="goHome()">
+            <div>
+                <span class="logo-text">Sabor <span>360°</span></span>
+                <span class="logo-tagline">Comunidad HORECA</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#quienes-somos">¿Quiénes Somos?</a></li>
-                <li><a href="#videos">Videos/Podcasts</a></li>
-                <li><a href="#recetas">Recetas</a></li>
+        </a>
+      <div class="header-actions">
+    <div class="header-social">
+        <a href="#" title="Facebook">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" title="Instagram">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" title="WhatsApp">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+        <a href="#" title="YouTube">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#111"/></svg>
+        </a>
+    </div>
+    <a href="#" class="btn-suscribirse">Suscríbase</a>
+</div>
+    </div>
+    <nav>
+        <div class="nav-inner">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="filterCat('todas');return false;" class="active" data-cat="todas">Home</a></li>
+                <li><a href="#" onclick="filterCat('noticias');return false;" data-cat="noticias">Noticias</a></li>
+                <li><a href="#" onclick="filterCat('negocios');return false;" data-cat="negocios">Negocios</a></li>
+                <li><a href="#" onclick="filterCat('gestion');return false;" data-cat="gestion">Gestión</a></li>
+                <li><a href="#" onclick="filterCat('contexto');return false;" data-cat="contexto">Contexto</a></li>
+                <li><a href="#" onclick="filterCat('liderazgo');return false;" data-cat="liderazgo">Liderazgo</a></li>
+                <li><a href="#" onclick="filterCat('eventos');return false;" data-cat="eventos">Eventos</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-overlay"></div>
-        <div>
-            <h1>¡Bienvenidos a Sabor 360!</h1>
-            <p>Descubre el auténtico sabor de la cocina colombiana con nuestras recetas tradicionales del Valle del Cauca. Cada plato cuenta una historia, cada sabor despierta un recuerdo.</p>
-        
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-    </section>
+    </nav>
+</header>
 
-    <!-- Quiénes Somos -->
-    <section id="quienes-somos">
-        <h2 class="section-title">¿Quiénes Somos?</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Sabor 360: El Ecosistema Gastronómico de Colombia</h3>
-                <p>
-                    Somos una <strong>central de contenidos multiplataforma</strong> diseñada para ser el referente de la industria. No solo hablamos de comida; ponemos infraestructura técnica de alto nivel al servicio de la narrativa gastronómica.
-                </p>
+<!-- HOME PAGE -->
+<div id="page-home">
 
-                <p>
-                    Acompañados por nuestro <em>Dream Team</em>, como el <strong>Chef Carlos Yanguas</strong> y la nutricionista <strong>Camila Duque</strong>, exploramos desde noticias diarias hasta la profundidad de la <strong>Gastronomía Regenerativa</strong>: mostrando la trazabilidad desde el productor y la tierra hasta el impacto social.
-                </p>
-    
-    </section>
-
-    <!-- Videos y Podcasts -->
-    <section id="videos">
-        <h2 class="section-title">Videos y Podcasts</h2>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400&h=300&fit=crop" alt="Video Sancocho">
-                    <div class="play-button"></div>
-                </div>
-                <div class="video-info">
-                    <h3>Secretos del Sancocho Valluno</h3>
-                    <p>Aprende a preparar el auténtico sancocho con todos sus secretos tradicionales.</p>
-                </div>
-            </div>
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=400&h=300&fit=crop" alt="Video Empanadas">
-                    <div class="play-button"></div>
-                </div>
-                <div class="video-info">
-                    <h3>Empanadas Perfectas</h3>
-                    <p>La técnica perfecta para hacer empanadas crujientes y deliciosas.</p>
-                </div>
-            </div>
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&h=300&fit=crop" alt="Podcast">
-                    <div class="play-button"></div>
-                </div>
-                <div class="video-info">
-                    <h3>Podcast: Historia del Manjar Blanco</h3>
-                    <p>Conoce la fascinante historia detrás del postre más emblemático del Valle.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recetas -->
-    <section id="recetas">
-        <h2 class="section-title">Recetas Paso a Paso</h2>
-        <div class="recipe-filters">
-            <button class="filter-btn active" data-filter="todas">Todas</button>
-            <button class="filter-btn" data-filter="desayuno">Desayuno</button>
-            <button class="filter-btn" data-filter="almuerzo">Almuerzo</button>
-            <button class="filter-btn" data-filter="cena">Cena</button>
-            <button class="filter-btn" data-filter="postres">Postres</button>
-        </div>
-
-        <div class="recipes-grid" id="recipesGrid">
-            <!-- Las recetas se generarán dinámicamente -->
-        </div>
-    </section>
-
-    <!-- Modal de Receta -->
-    <div class="modal" id="recipeModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">×</button>
-            <div class="modal-header">
-                <h2 id="modalTitle"></h2>
-                <div class="recipe-meta" id="modalMeta"></div>
-            </div>
-            <div class="modal-body">
-                <img id="modalImage" class="modal-image" src="" alt="">
-                <h3 class="ingredientes-title">Ingredientes</h3>
-                <ul class="ingredientes-list" id="modalIngredientes"></ul>
-                <h3 class="preparacion-title">Preparación</h3>
-                <ol class="pasos-list" id="modalPreparacion"></ol>
-            </div>
+    <!-- TICKER -->
+    <div class="ticker-bar">
+        <div class="ticker-inner">
+            <span class="ticker-label">Última hora</span>
+            <span class="ticker-content">
+                Inundaciones en Córdoba amenazan precios de la carne &nbsp;|&nbsp;
+                McDonald's elimina sachets de salsa en Chile &nbsp;|&nbsp;
+                S. Pellegrino abre convocatoria 7ma edición Young Chef Academy &nbsp;|&nbsp;
+                Qbano proyecta crecimiento de doble dígito en 2026 &nbsp;|&nbsp;
+                Nuevo decreto Salario Mínimo en debate
+            </span>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Sabor 360. Todos los derechos reservados. Hecho con ❤️ en Colombia</p>
-    </footer>
+    <!-- SLIDER -->
+    <section class="slider-section">
+        <div class="slider-track" id="sliderTrack">
+            <!-- slides rendered by JS -->
+        </div>
+        <button class="slider-btn prev" onclick="slidePrev()">&#8592;</button>
+        <button class="slider-btn next" onclick="slideNext()">&#8594;</button>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- DATE BAR -->
+    <div class="date-bar">
+        <span id="currentDate"></span>
+        <span>Cali, Valle del Cauca — Colombia</span>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main-layout">
+
+        <!-- LEFT: News Feed -->
+        <main>
+            <!-- Últimas Noticias -->
+            <div class="section-header">
+                <h2>Últimas Noticias</h2>
+                <div class="section-line"></div>
+                <span class="cat-tag" id="activeFilterLabel">Todas</span>
+            </div>
+
+            <div class="news-grid" id="newsGrid">
+                <!-- rendered by JS -->
+            </div>
+
+            <!-- Más Noticias: list format -->
+            <div class="section-header">
+                <h2>Más Noticias</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="news-list" id="newsList">
+                <!-- rendered by JS -->
+            </div>
+        </main>
+
+        <!-- RIGHT: Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="section-header">
+                    <h2>Lo más leído</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div id="sidebarMostRead">
+                    <!-- rendered by JS -->
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-header">
+                    <h2>Eventos</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div id="sidebarEvents">
+                    <!-- rendered by JS -->
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<!-- ARTICLE PAGE -->
+<div id="page-article">
+    <div class="article-page" id="articleContent">
+        <!-- rendered by JS -->
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-main">
+        <div class="footer-col">
+            <div class="footer-logo-text">Sabor <span>360&deg;</span></div>
+            <span class="footer-logo-tag">Comunidad HORECA</span>
+            <div class="footer-divider"></div>
+            <h4>Bolet&iacute;n informativo</h4>
+            <span class="footer-col-line"></span>
+            <p>&iexcl;Reciba noticias importantes directamente y man&eacute;ngase conectado con el sector!</p>
+            <a href="#" class="btn-footer-sub">Suscr&iacute;base</a>
+        </div>
+        <div class="footer-col">
+            <h4>Sobre nosotros</h4>
+            <span class="footer-col-line"></span>
+            <ul class="footer-links">
+                <li><a href="#">Acerca de Sabor 360</a></li>
+                <li><a href="#">Centro de prensa</a></li>
+                <li><a href="#">Quiero pautar</a></li>
+                <li><a href="#">Cont&aacute;ctenos</a></li>
+                <li><a href="#">&iquest;Qui&eacute;nes Somos?</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Siga nuestras redes</h4>
+            <span class="footer-col-line"></span>
+            <div class="footer-social">
+                <a href="#" title="Facebook"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                <a href="#" title="Instagram"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+                <a href="#" title="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+                <a href="#" title="Email"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                <a href="#" title="Spotify"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 13.5a7 7 0 0 1 8 0M7 10a9 9 0 0 1 10 0M9 16.5a5 5 0 0 1 6 0" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+                <a href="#" title="WhatsApp"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+                <a href="#" title="YouTube"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#111"/></svg></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <a href="#">Aviso Legal</a>
+        <a href="#">Pol&iacute;tica de Privacidad</a>
+        <a href="#">Pol&iacute;tica de Cookies</a>
+    </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
