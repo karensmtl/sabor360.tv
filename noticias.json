@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "categoria": "gestion",
+    "categoriaLabel": "Gestion",
+    "fecha": "20 de febrero de 2026",
+    "titulo": "El invierno en Cordoba puede generar el aumento de los precios de la carne",
+    "extracto": "Las fuertes lluvias que han azotado al departamento de Cordoba y a otras regiones del Caribe colombiano no solo ha generado una gran crisis humanitaria y economica.",
+    "imagen": "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=800&h=500&fit=crop",
+    "autor": "Redaccion Sabor 360",
+    "destacado": true,
+    "cuerpo": "<p>Segun los datos mas recientes de Fedecan, las inundaciones han dejado mas de 3.100 reses muertas.</p>"
+  },
+  {
+    "id": 2,
+    "categoria": "negocios",
+    "categoriaLabel": "Negocios",
+    "fecha": "20 de febrero de 2026",
+    "titulo": "McDonald's de Chile le apuesta al medio ambiente",
+    "extracto": "Desde la cajita feliz hasta la construccion de restaurantes con madera sostenible.",
+    "imagen": "img/mac.jpg",
+    "autor": "Redaccion Sabor 360",
+    "destacado": true,
+    "cuerpo": "<p>McDonalds Chile da otro gran paso al cuidado del medio ambiente.</p>"
+  },
+  {
+    "id": 3,
+    "categoria": "eventos",
+    "categoriaLabel": "Eventos",
+    "fecha": "15 de febrero de 2026",
+    "titulo": "S. Pellegrino Young Chef Academy abre convocatoria para su septima edicion",
+    "extracto": "La reconocida marca de agua italiana vuelve a abrir la convocatoria para chefs menores de 30 anos.",
+    "imagen": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=500&fit=crop",
+    "autor": "Redaccion Sabor 360",
+    "destacado": true,
+    "cuerpo": "<p>S. Pellegrino reafirma su compromiso con la nueva generacion de la alta cocina internacional.</p>"
+  }
+]
