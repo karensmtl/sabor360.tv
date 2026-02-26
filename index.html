@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@300;400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-  
 </head>
 <body>
 
@@ -15,10 +14,7 @@
 <header>
     <div class="header-top">
         <a class="logo-area" href="#" onclick="goHome()">
-            <div>
-                <span class="logo-text">Sabor <span>360&deg;</span></span>
-                <span class="logo-tagline">Nuestra Comunidad </span>
-            </div>
+            <img src="img/logo.png" alt="Sabor 360" class="logo-img">
         </a>
         <div class="header-actions">
             <div class="header-social">
@@ -139,9 +135,13 @@
                 <div class="section-line"></div>
             </div>
             <div class="vid-featured">
-                <div class="vid-embed">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUkBqRKoYbaAb3osKBJeH33Q"
-                        title="Sabor 360 YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="vid-embed" id="featuredVideoEmbed" data-videoid="TLCqabPNTLA">
+                    <div class="vid-placeholder" onclick="playVideo(this, 'TLCqabPNTLA', true)">
+                        <img src="https://img.youtube.com/vi/TLCqabPNTLA/maxresdefault.jpg" alt="Canal Sabor 360" class="vid-thumb-img" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        <div class="vid-play-overlay">
+                            <div class="vid-play-btn">&#9654;</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="vid-featured-info">
                     <span class="vid-badge">Destacado</span>
@@ -158,76 +158,58 @@
                 <div class="section-line"></div>
             </div>
             <div class="vid-grid">
-             <div class="vid-card">
-    <div class="vid-thumb-wrap">
-        <iframe 
-            src="https://www.youtube.com/embed/QgIXLpEwuLM" 
-            title="Como cortar una sandía" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-    <div class="vid-card-info">
-        <span class="vid-badge">Técnicas</span>
-        <h3>Cómo abrir un coco</h3>
-        <p>fácil y rápido.</p>
-    </div>
-</div>
-<div class="vid-card">
-   <div class="vid-thumb-wrap">
-    <iframe 
-        width="100%" 
-        height="100%" 
-        src="https://www.youtube.com/embed/ZeE7Wisrc6o" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-    </iframe>
-</div>
-<div class="vid-card-info">
-    <span class="vid-badge">Técnicas</span>
-    <h3>Cómo cortar una sandía</h3>
-    <p>Aprende la técnica correcta para estabilizar y cortar frutas grandes de forma segura.</p>
-</div>
-</div>
-<div class="vid-card">
-    <div class="vid-thumb-wrap">
-        <iframe 
-            src="https://www.youtube.com/embed/ybwSqqDtZeM" 
-            title="Como cortar una sandía" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-    <div class="vid-card-info">
-        <span class="vid-badge">Técnicas</span>
-        <h3>El Mejor Chef de cada País TOPS</h3>
-        <p>Los mejores cocineros de méxico, mejores cocineros de Colombia o mejores cocineros de España suelen participar ocasionalmente o de manera fija en programas como masterchef..</p>
-    </div>
-</div>
-
-             <div class="vid-card">
-    <div class="vid-thumb-wrap">
-        <iframe 
-            src="https://www.youtube.com/embed/CzWo9ariWmc" 
-            title="Como cortar una sandía" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-    <div class="vid-card-info">
-        <span class="vid-badge">Técnicas</span>
-        <h3>Croquetas de Tamal de Pipián </h3>
-        <p>Congreso Gastronómico de Popayán.</p>
-    </div>
-</div>
-             
-               
+                <div class="vid-card">
+                    <div class="vid-thumb-wrap" data-videoid="QgIXLpEwuLM">
+                        <div class="vid-placeholder" onclick="playVideo(this, 'QgIXLpEwuLM', false)">
+                            <img src="https://img.youtube.com/vi/QgIXLpEwuLM/mqdefault.jpg" alt="Como abrir un coco" class="vid-thumb-img" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <div class="vid-play-overlay"><div class="vid-play-btn small">&#9654;</div></div>
+                        </div>
+                    </div>
+                    <div class="vid-card-info">
+                        <span class="vid-badge">T&eacute;cnicas</span>
+                        <h3>C&oacute;mo abrir un coco</h3>
+                        <p>F&aacute;cil y r&aacute;pido.</p>
+                    </div>
+                </div>
+                <div class="vid-card">
+                    <div class="vid-thumb-wrap" data-videoid="ZeE7Wisrc6o">
+                        <div class="vid-placeholder" onclick="playVideo(this, 'ZeE7Wisrc6o', false)">
+                            <img src="https://img.youtube.com/vi/ZeE7Wisrc6o/mqdefault.jpg" alt="Como cortar una sandia" class="vid-thumb-img" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <div class="vid-play-overlay"><div class="vid-play-btn small">&#9654;</div></div>
+                        </div>
+                    </div>
+                    <div class="vid-card-info">
+                        <span class="vid-badge">T&eacute;cnicas</span>
+                        <h3>C&oacute;mo cortar una sand&iacute;a</h3>
+                        <p>Aprende la t&eacute;cnica correcta para estabilizar y cortar frutas grandes de forma segura.</p>
+                    </div>
+                </div>
+                <div class="vid-card">
+                    <div class="vid-thumb-wrap" data-videoid="ybwSqqDtZeM">
+                        <div class="vid-placeholder" onclick="playVideo(this, 'ybwSqqDtZeM', false)">
+                            <img src="https://img.youtube.com/vi/ybwSqqDtZeM/mqdefault.jpg" alt="El Mejor Chef" class="vid-thumb-img" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <div class="vid-play-overlay"><div class="vid-play-btn small">&#9654;</div></div>
+                        </div>
+                    </div>
+                    <div class="vid-card-info">
+                        <span class="vid-badge">T&eacute;cnicas</span>
+                        <h3>El Mejor Chef de cada Pa&iacute;s TOPS</h3>
+                        <p>Los mejores cocineros de M&eacute;xico, Colombia y Espa&ntilde;a participan en programas como MasterChef.</p>
+                    </div>
+                </div>
+                <div class="vid-card">
+                    <div class="vid-thumb-wrap" data-videoid="CzWo9ariWmc">
+                        <div class="vid-placeholder" onclick="playVideo(this, 'CzWo9ariWmc', false)">
+                            <img src="https://img.youtube.com/vi/CzWo9ariWmc/mqdefault.jpg" alt="Croquetas de Tamal" class="vid-thumb-img" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <div class="vid-play-overlay"><div class="vid-play-btn small">&#9654;</div></div>
+                        </div>
+                    </div>
+                    <div class="vid-card-info">
+                        <span class="vid-badge">T&eacute;cnicas</span>
+                        <h3>Croquetas de Tamal de Pipi&aacute;n</h3>
+                        <p>Congreso Gastron&oacute;mico de Popayn.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
