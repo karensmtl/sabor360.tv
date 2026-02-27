@@ -50,11 +50,11 @@
   {
     "id": 1,
     "categoria": "gestion",
-    "categoriaLabel": "Gestion",
+    "categoriaLabel": "Gestión",
     "fecha": "20 de febrero de 2026",
     "titulo": "El invierno en Cordoba puede generar el aumento de los precios de la carne",
     "extracto": "Las fuertes lluvias que han azotado al departamento de Cordoba y a otras regiones del Caribe colombiano no solo ha generado una gran crisis humanitaria y economica.",
-    "imagen": "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=800&h=500&fit=crop",
+    "imagen": "https://i.ibb.co/7tQqY1J8/chocolate-bars-with-chocolate-chips-gray.jpg",
     "autor": "Redaccion Sabor 360",
     "destacado": true,
     "cuerpo": "<p>Segun los datos mas recientes de Fedecan, las inundaciones han dejado mas de 3.100 reses muertas.</p>"
