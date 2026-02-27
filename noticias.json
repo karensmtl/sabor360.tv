@@ -1,5 +1,17 @@
 [
   {
+    "id": 7,
+    "categoria": "negocios",
+    "categoriaLabel": "Negocios",
+    "fecha": "27 de febrero de 2026",
+    "titulo": "EL SABOR DE COLOMBIA CONQUISTA LOS “OSCAR” DE LA LITERATURA GASTRONÓMICA",
+    "extracto": "La chef Catalina Osorio es premiada en los Gourmand World Cookbook Awards por su obra que redefine el placer del encuentro en la mesa",
+    "imagen": "https://i.ibb.co/JwyTCbpT/chef-ganadora-2-1.jpg",
+    "autor": "Redacción Sabor 360",
+    "destacado": true,
+    "cuerpo": "<p>5.La cocina colombiana volvió a ocupar un lugar protagónico en la escena internacional gracias a la chef <strong>Catalina Osorio,<strong> quien fue reconocida en los <strong>Gourmand World Cookbook Awards,<strong> uno de los certámenes más importantes dedicados a premiar publicaciones gastronómicas y de vinos a nivel global</p>\n\n<p>5.El galardón llegó por su libro <strong>“Un domingo de gula”,<strong> una propuesta editorial que celebra el placer de compartir alrededor de la mesa sin rigidez ni protocolos. Más que un recetario tradicional, la obra invita a disfrutar del brunch como un espacio creativo, cercano y lleno de identidad, donde la comida se convierte en excusa para el encuentro</p>\n\n<p>5.Este reconocimiento no solo destaca la calidad culinaria de la chef, sino también su capacidad para narrar la cocina desde una perspectiva fresca y contemporánea. A través de sus páginas, Osorio reivindica ingredientes, sabores y dinámicas que conectan con la diversidad cultural colombiana, proyectándola hacia lectores de distintas partes del mundo</p>\n\n<p>5.El premio representa un impulso significativo para la visibilidad de la gastronomía nacional en escenarios internacionales. En un momento en el que la cocina colombiana continúa ganando terreno fuera del país, este logro confirma que las historias contadas desde nuestros fogones también tienen eco global</p>\n\n<p>5.Con este reconocimiento, Catalina Osorio no solo suma un título a su trayectoria profesional, sino que consolida una narrativa culinaria que mezcla tradición, creatividad y pasión por compartir</p>"
+  },
+  {
     "id": 6,
     "categoria": "negocios",
     "categoriaLabel": "Negocios",
