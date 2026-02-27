@@ -1,5 +1,17 @@
 [
   {
+    "id": 5,
+    "categoria": "eventos",
+    "categoriaLabel": "Eventos",
+    "fecha": "23 de febrero de 2026",
+    "titulo": "BURGERVILLE 2026; EL REGRESO DEL FESTIVAL DE HAMBURGUESAS MÀS ESPERADO EN BOGOTÀ.",
+    "extracto": "Treinta y cinco restaurantes y creaciones inéditas se apoderan de la Hacienda San Rafael del 13 al 15 de marzo.",
+    "imagen": "https://i.ibb.co/Y4txw76n/Whats-App-Image-2026-02-27-at-3-23-41-PM.jpg",
+    "autor": "Redacción Sabor 360",
+    "destacado": true,
+    "cuerpo": "<p>5.Bogotá se prepara para recibir una nueva edición de Burgerville, uno de los festivales gastronómicos más destacados dedicados a la hamburguesa. En su quinta versión, el evento congregará a 35 restaurantes que presentarán creaciones exclusivas diseñadas únicamente para esta experiencia</p>\n\n<p>5.El festival se llevará a cabo del 13 al 15 de marzo de 2026 en la Hacienda San Rafael, un espacio que permitirá a los asistentes recorrer distintas propuestas culinarias en un solo lugar, combinando gastronomía, ambiente urbano y entretenimiento</p>\n\n<p>5.<strong>Hamburguesas de edición limitada<strong></p>\n\n<p>5. Cada restaurante participante desarrolló una hamburguesa especial que solo estará disponible durante los días del evento. Esta dinámica convierte a Burgerville en una vitrina de creatividad culinaria, donde se exploran sabores, técnicas y combinaciones que van más allá de la receta tradicional</p>\n\n<p>5.Entre los participantes se encuentran reconocidos establecimientos de la escena gastronómica local como Andrés Carne de Res, Agadon, Bubu Burger, Chum Burgers, Sir Frank y Universal, entre otros</p>\n\n<p>5.La experiencia se complementa con una zona de postres y opciones adicionales pensadas para ampliar la oferta gastronómica y hacer del festival un plan completo para distintos públicos</p>\n\n<img src=\"https://i.ibb.co/V0vs5Wdn/Whats-App-Image-2026-02-27-at-3-23-41-PM.jpg\" style=\"width:100%;margin:16px 0;\">\n\n<p>5.Las fechas van desde el viernes 13,  sábado 14 de marzo: 11:00 a.m. a 9:00 p.m. (ingreso exclusivo para mayores de edad) y el domingo 15 de marzo: 11:00 a.m. a 7:00 p.m. (jornada familiar)</p>\n\n<p>5.Las boletas están disponibles a través de Tuboleta, canal oficial de venta</p>"
+  },
+  {
     "id": 4,
     "categoria": "eventos",
     "categoriaLabel": "Eventos",
