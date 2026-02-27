@@ -119,7 +119,7 @@ function renderNews(filter) {
     filter = filter || 'todas';
     currentFilter = filter;
     var filtered = filter === 'todas' ? noticias : noticias.filter(function(n){ return n.categoria === filter; });
-    var labels = { todas: 'Todas', noticias: 'Noticias', negocios: 'Negocios', gestion: 'Gestion', contexto: 'Contexto', liderazgo: 'Liderazgo', eventos: 'Eventos' };
+    var labels = { todas: 'Todas',negocios: 'Negocios', gestion: 'Gestión', eventos: 'Eventos' };
     var labelEl = document.getElementById('activeFilterLabel');
     if (labelEl) labelEl.textContent = labels[filter] || filter;
     var grid = document.getElementById('newsGrid');
