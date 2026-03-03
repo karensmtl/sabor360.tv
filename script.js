@@ -155,9 +155,25 @@ function renderNews(filter) {
 
     if (!grid || !list) return;
 
-    grid.innerHTML = filtered.slice(0, 3).map(function(n, i) {
+    var gridItems = filtered.slice(0, 3);
+
+    grid.innerHTML = gridItems.map(function(n, i) {
+
+        if (i === 0) {
+            return '<div class="news-card featured" onclick="openArticle(' + n.id + ')">' +
+                '<img class="news-img" src="' + n.imagen + '" alt="' + n.titulo + '" loading="lazy">' +
+                '<div class="news-card-body">' +
+                    '<span class="news-cat">' + n.categoriaLabel + '</span>' +
+                    '<div class="news-title">' + n.titulo + '</div>' +
+                    '<div class="news-excerpt">' + n.extracto + '</div>' +
+                    '<div class="news-meta">' + n.fecha + ' &nbsp;&middot;&nbsp; ' + n.autor + '</div>' +
+                    buildShareBar(n.titulo, true) +
+                '</div>' +
+            '</div>';
+        }
+
         return '<div class="news-card" onclick="openArticle(' + n.id + ')">' +
-            '<img src="' + n.imagen + '" alt="' + n.titulo + '" loading="lazy">' +
+            '<img class="news-img" src="' + n.imagen + '" alt="' + n.titulo + '" loading="lazy">' +
             '<div class="news-card-body">' +
                 '<span class="news-cat">' + n.categoriaLabel + '</span>' +
                 '<div class="news-title">' + n.titulo + '</div>' +
