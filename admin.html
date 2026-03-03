@@ -770,24 +770,36 @@ async function cargarNoticias() {
 }
 
 async function guardarEnGitHub(noticiasActualizadas, mensaje) {
-  var contenido = btoa(unescape(encodeURIComponent(JSON.stringify(noticiasActualizadas, null, 2))));
-  var res = await fetch('https://api.github.com/repos/' + GITHUB_USER + '/' + GITHUB_REPO + '/contents/' + GITHUB_FILE, {
-    method: 'PUT',
-    headers: {
-      'Authorization': 'token ' + GITHUB_TOKEN,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      message: mensaje || 'Actualización de noticias',
-      content: contenido,
-      sha: currentSha,
-      branch: GITHUB_BRANCH
-    })
-  });
+  var jsonString = JSON.stringify(noticiasActualizadas, null, 2);
+
+  var contenido = btoa(
+    new TextEncoder().encode(jsonString)
+      .reduce((data, byte) => data + String.fromCharCode(byte), '')
+  );
+
+  var res = await fetch(
+    'https://api.github.com/repos/' + GITHUB_USER + '/' + GITHUB_REPO + '/contents/' + GITHUB_FILE,
+    {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'token ' + GITHUB_TOKEN,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: mensaje || 'Actualización de noticias',
+        content: contenido,
+        sha: currentSha,
+        branch: GITHUB_BRANCH
+      })
+    }
+  );
+
   var result = await res.json();
+
   if (result.content) {
     currentSha = result.content.sha;
   }
+
   return result;
 }
 
