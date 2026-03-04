@@ -1,5 +1,17 @@
 [
   {
+    "id": 13,
+    "categoria": "negocios",
+    "categoriaLabel": "Negocios",
+    "fecha": "25 de febrero de 2026",
+    "titulo": "COLOMBIA ENTRA AL TOP DE LAS MEJORES COCINAS DEL MUNDO.",
+    "extracto": "Según el prestigioso ranking de TasteAtlas, en la gastronomía nacional se destacan sabores auténticos como el pandebono y el café.",
+    "imagen": "https://i.ibb.co/7dyTRPH1/top-view-of-brazilian-cheese-bread-or-cheese-bun-2026-01-08-00-24-06-utc-jpg.jpg",
+    "autor": "Redacción Sabor 360",
+    "destacado": true,
+    "cuerpo": "<p>La gastronomía de Colombia ganó un lugar destacado en el panorama culinario global al ubicarse en la posición 23 del ranking de las “100 mejores cocinas del mundo” elaborado por TasteAtlas, la conocida plataforma gastronómica que evalúa sabores tradicionales de distintos países con base en cientos de miles de calificaciones de comensales alrededor del mundo</p> \n\n<p>Este reconocimiento posiciona a Colombia entre las 25 cocinas más valoradas del planeta, un logro que refleja no solo la variedad de ingredientes autóctonos, sino también la forma en que las comidas cotidianas han trascendido fronteras ya que este listado global es basado en más de 590.000 calificaciones de usuarios de todo el mundo y casi 19.000 alimentos</p>\n\n<p>Estar en el top 25 implica que la cocina colombiana ha sido ampliamente valorada por su identidad,tradición,productos, locales y técnicas culinarias</p>\n\n<p>La evaluación incluyó productos y preparaciones que representan lo más característico de la cocina colombiana especialmente aquellos que se consumen en la vida diaria o que forman parte de tradiciones regionales y que recibieron buenas calificaciones por su sabor y autenticidad. Entre ellos se encuentran: el café , pandebono,suero costeño, calentado, hogao, estos elementos, más que platos sofisticados, muestran la fortaleza de una gastronomía que se construye en la cocina popular y familiar</p>\n\n<p>En el listado de TasteAtlas, Colombia quedó por encima de varias naciones con ofertas culinarias también reconocidas, situándose junto a países tradicionales como Italia, Grecia y Perú, que lideran el top</p>\n\n<p>Este escalafón internacional puede ofrecer más que un título: impulsa el interés por la cocina colombiana como atractivo turístico y cultural, y evidencia que la gastronomía local tiene un valor global que va más allá de las fronteras</p>"
+  },
+  {
     "id": 12,
     "categoria": "negocios",
     "categoriaLabel": "Negocios",
