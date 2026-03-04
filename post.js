@@ -1,4 +1,4 @@
-const api = 'https://sabor360.tv/api/public/slug/';
+const api = 'https://sabor360.tv/api/public/posts/slug/';
 const cdn = 'https://sabor360.tv/api/global/cdn';
 
 function getSlug() {
