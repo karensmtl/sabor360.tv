@@ -1,5 +1,17 @@
 [
   {
+    "id": 12,
+    "categoria": "negocios",
+    "categoriaLabel": "Negocios",
+    "fecha": "25 de febrero de 2026",
+    "titulo": "OMAKASE, LA NUEVA FRONTERA DE LA ALTA COCINA BOGOTANA.",
+    "extracto": "La ciudad consolida su oferta internacional con barras de pocos comensales que eliminan la carta para ofrecer recorridos personalizados.",
+    "imagen": "https://i.ibb.co/zVRGc6yK/chef-making-sushi-in-a-japanese-restaurant-2026-01-07-23-11-31-utc-jpg.jpg",
+    "autor": "Redacción Sabor 360",
+    "destacado": true,
+    "cuerpo": "<p>La escena gastronómica de Bogotá suma una nueva experiencia a su oferta culinaria: el omakase, un formato japonés que propone dejar la elección del menú en manos del chef. La tendencia, que ha tomado fuerza recientemente en la capital, responde a un público que busca propuestas más exclusivas y personalizadas</p>\n\n<p>El concepto que significa “lo dejo en tus manos” elimina la carta tradicional y plantea un recorrido por tiempos diseñado según la frescura de los ingredientes y la visión del cocinero. Generalmente se desarrolla, bajo reserva previa, ya que es un lugar con aproximadamente 15 sillas alrededor de la barra con vista a lo que cocina el chef, lo que permite un servicio más cercano y detallado</p>\n\n<p>En Bogotá, restaurantes como Otafuku, Nana y Llō han incorporado este formato a su propuesta. Cada uno ofrece un enfoque distinto: desde menús centrados en pescados y mariscos frescos hasta versiones que integran ingredientes locales o reinterpretan el ramen dentro de un esquema degustación</p>\n\n<p>El auge del omakase en la ciudad refleja un cambio en los hábitos de consumo gastronómico. Más que elegir un plato específico, los comensales buscan una experiencia guiada, donde la técnica, la calidad del producto y la interacción directa con el chef son protagonistas.Con esta tendencia, Bogotá continúa consolidándose como un escenario abierto a formatos internacionales que priorizan la experiencia culinaria como eje central</p>"
+  },
+  {
     "id": 11,
     "categoria": "negocios",
     "categoriaLabel": "Negocios",
