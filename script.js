@@ -1,78 +1,135 @@
 /* ========================
+   CONFIG
+======================== */
+
+const API_POSTS = 'https://sabor360.tv/api/public/posts/50';
+const CDN = 'https://sabor360.tv/api/global/cdn';
+
+/* ========================
    STATE
 ======================== */
 
-var state = {
-    noticias: [],
+const state = {
+    posts: [],
     currentSlide: 0,
     slideTimer: null,
     currentFilter: 'todas'
 };
 
 /* ========================
+   HELPERS
+======================== */
+
+function escapeAttr(value) {
+    return String(value || '').replace(/'/g, "\\'");
+}
+
+function buildImageUrl(post, sizeIndex = 0) {
+
+    if (!post.image || !post.sizes) return '';
+
+    const sizes = post.sizes.split(';');
+    const size = sizes[sizeIndex] || sizes[0];
+
+    return CDN + post.image + '-' + size + '.webp';
+}
+
+function formatDate(date) {
+
+    if (!date) return '';
+
+    return new Date(date).toLocaleDateString('es-CO', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+}
+
+/* ========================
    GETTERS
 ======================== */
 
-function getSliderArticles() {
-    return state.noticias.filter(function(n) {
-        return n.destacado;
-    });
+function getSliderPosts() {
+    return state.posts;
 }
 
-function getFilteredNews() {
-    if (state.currentFilter === 'todas') return state.noticias;
-    return state.noticias.filter(function(n) {
-        return n.categoria === state.currentFilter;
+function getFilteredPosts() {
+
+    if (state.currentFilter === 'todas')
+        return state.posts;
+
+    return state.posts.filter(function(p) {
+
+        return String(p.category_id) === String(state.currentFilter)
+            || p.category === state.currentFilter;
+
     });
+
 }
 
-function findArticleById(id) {
-    for (var i = 0; i < state.noticias.length; i++) {
-        if (String(state.noticias[i].id) === String(id)) {
-            return state.noticias[i];
-        }
-    }
-    return null;
+function findPost(id) {
+
+    return state.posts.find(function(p) {
+        return String(p.id) === String(id);
+    }) || null;
+
 }
 
 /* ========================
    INIT
 ======================== */
 
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('noticias.json')
+document.addEventListener('DOMContentLoaded', init);
+
+function init() {
+
+    fetch(API_POSTS)
         .then(function(r) { return r.json(); })
         .then(function(data) {
-            state.noticias = data;
+
+            console.log('Noticias cargadas:', data);
+
+            state.posts = data || [];
+
             renderAll();
+
         })
         .catch(function() {
-            console.error('No se pudo cargar noticias.json');
+            console.error('No se pudo cargar las noticias');
         });
-});
+
+}
 
 function renderAll() {
+
     buildSlider();
     renderNews();
     renderSidebar();
     setDate();
     initTicker();
+
 }
 
 /* ========================
    SHARE BAR
 ======================== */
 
-function buildShareBar(titulo, small) {
-    var url = encodeURIComponent(window.location.href);
-    var text = encodeURIComponent(titulo);
-    var cls = small ? "news-share-bar" : "article-share-bar";
+function buildShareBar(title, small) {
+
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(title);
+
+    const cls = small
+        ? 'news-share-bar'
+        : 'article-share-bar';
 
     return '<div class="' + cls + '" onclick="event.stopPropagation()">' +
         '<span>Compartir</span>' +
         '<a href="https://www.facebook.com/sharer/sharer.php?u=' + url + '" target="_blank" class="fb">FB</a>' +
         '<a href="https://wa.me/?text=' + text + '%20' + url + '" target="_blank" class="wa">WA</a>' +
     '</div>';
+
 }
 
 /* ========================
@@ -80,48 +137,72 @@ function buildShareBar(titulo, small) {
 ======================== */
 
 function buildSlider() {
-    var sliderArticles = getSliderArticles();
-    var track = document.getElementById('sliderTrack');
-    var dotsContainer = document.getElementById('sliderDots');
 
-    if (!track || !dotsContainer) return;
+    const posts = getSliderPosts();
 
-    if (!sliderArticles.length) {
+    const track = document.getElementById('sliderTrack');
+    const dots = document.getElementById('sliderDots');
+
+    if (!track || !dots) return;
+
+    if (!posts.length) {
+
         track.innerHTML = '';
-        dotsContainer.innerHTML = '';
+        dots.innerHTML = '';
+
         return;
     }
 
     state.currentSlide = 0;
 
-    track.innerHTML = sliderArticles.map(function(n, i) {
-        return '<div class="slide" onclick="openArticle(' + n.id + ')">' +
-            '<img src="' + n.imagen + '" alt="' + n.titulo + '" loading="' + (i === 0 ? 'eager' : 'lazy') + '">' +
+    track.innerHTML = posts.map(function(p, i) {
+
+        const img = buildImageUrl(p, 1);
+
+        return '<div class="slide" onclick="openArticle(\'' + escapeAttr(p.slug) + '\')">' +
+
+            '<img src="' + img + '" alt="' + p.title + '" loading="' + (i === 0 ? 'eager' : 'lazy') + '">' +
+
             '<div class="slide-overlay"></div>' +
+
             '<div class="slide-content">' +
-                '<span class="slide-category">' + n.categoriaLabel + '</span>' +
-                '<div class="slide-title">' + n.titulo + '</div>' +
-                '<div class="slide-desc">' + n.extracto + '</div>' +
-                '<div class="slide-date">' + n.fecha + '</div>' +
+
+                '<span class="slide-category">' + p.category + '</span>' +
+
+                '<div class="slide-title">' + p.title + '</div>' +
+
+                '<div class="slide-desc">' + p.subtitle + '</div>' +
+
+                '<div class="slide-date">' + formatDate(p.published_at) + '</div>' +
+
             '</div>' +
+
         '</div>';
+
     }).join('');
 
-    dotsContainer.innerHTML = sliderArticles.map(function(_, i) {
-        return '<div class="dot ' + (i === 0 ? 'active' : '') + '" onclick="goToSlide(' + i + ')"></div>';
+    dots.innerHTML = posts.map(function(_, i) {
+
+        return '<div class="dot ' + (i === 0 ? 'active' : '') +
+            '" onclick="goToSlide(' + i + ')"></div>';
+
     }).join('');
 
     goToSlide(0);
     startAutoSlide();
+
 }
 
 function goToSlide(index) {
-    var sliderArticles = getSliderArticles();
-    if (!sliderArticles.length) return;
+
+    const posts = getSliderPosts();
+
+    if (!posts.length) return;
 
     state.currentSlide = index;
 
-    var track = document.getElementById('sliderTrack');
+    const track = document.getElementById('sliderTrack');
+
     if (track) {
         track.style.transform = 'translateX(-' + (index * 100) + '%)';
     }
@@ -129,17 +210,30 @@ function goToSlide(index) {
     document.querySelectorAll('.dot').forEach(function(d, i) {
         d.classList.toggle('active', i === index);
     });
+
 }
 
 function slideNext() {
-    var sliderArticles = getSliderArticles();
-    if (!sliderArticles.length) return;
-    goToSlide((state.currentSlide + 1) % sliderArticles.length);
+
+    const posts = getSliderPosts();
+
+    if (!posts.length) return;
+
+    goToSlide(
+        (state.currentSlide + 1) % posts.length
+    );
+
 }
 
 function startAutoSlide() {
+
     clearInterval(state.slideTimer);
-    state.slideTimer = setInterval(slideNext, 5000);
+
+    state.slideTimer = setInterval(
+        slideNext,
+        5000
+    );
+
 }
 
 /* ========================
@@ -147,53 +241,90 @@ function startAutoSlide() {
 ======================== */
 
 function renderNews(filter) {
+
     if (filter) state.currentFilter = filter;
 
-    var filtered = getFilteredNews();
-    var grid = document.getElementById('newsGrid');
-    var list = document.getElementById('newsList');
+    const posts = getFilteredPosts();
+
+    const grid = document.getElementById('newsGrid');
+    const list = document.getElementById('newsList');
 
     if (!grid || !list) return;
 
-    var gridItems = filtered.slice(0, 3);
+    const gridItems = posts.slice(0, 3);
 
-    grid.innerHTML = gridItems.map(function(n, i) {
+    grid.innerHTML = gridItems.map(function(p, i) {
+
+        const img = buildImageUrl(p);
 
         if (i === 0) {
-            return '<div class="news-card featured" onclick="openArticle(' + n.id + ')">' +
-                '<img class="news-img" src="' + n.imagen + '" alt="' + n.titulo + '" loading="lazy">' +
+
+            return '<div class="news-card featured" onclick="openArticle(\'' + escapeAttr(p.slug) + '\')">' +
+
+                '<img class="news-img" src="' + img + '" alt="' + p.title + '" loading="lazy">' +
+
                 '<div class="news-card-body">' +
-                    '<span class="news-cat">' + n.categoriaLabel + '</span>' +
-                    '<div class="news-title">' + n.titulo + '</div>' +
-                    '<div class="news-excerpt">' + n.extracto + '</div>' +
-                    '<div class="news-meta">' + n.fecha + ' &nbsp;&middot;&nbsp; ' + n.autor + '</div>' +
-                    buildShareBar(n.titulo, true) +
+
+                    '<span class="news-cat">' + p.category + '</span>' +
+
+                    '<div class="news-title">' + p.title + '</div>' +
+
+                    '<div class="news-excerpt">' + p.subtitle + '</div>' +
+
+                    '<div class="news-meta">' + formatDate(p.published_at) + '</div>' +
+
+                    buildShareBar(p.title, true) +
+
                 '</div>' +
+
             '</div>';
+
         }
 
-        return '<div class="news-card" onclick="openArticle(' + n.id + ')">' +
-            '<img class="news-img" src="' + n.imagen + '" alt="' + n.titulo + '" loading="lazy">' +
+        return '<div class="news-card" onclick="openArticle(\'' + escapeAttr(p.slug) + '\')">' +
+
+            '<img class="news-img" src="' + img + '" alt="' + p.title + '" loading="lazy">' +
+
             '<div class="news-card-body">' +
-                '<span class="news-cat">' + n.categoriaLabel + '</span>' +
-                '<div class="news-title">' + n.titulo + '</div>' +
-                '<div class="news-meta">' + n.fecha + '</div>' +
-                buildShareBar(n.titulo, true) +
+
+                '<span class="news-cat">' + p.category + '</span>' +
+
+                '<div class="news-title">' + p.title + '</div>' +
+
+                '<div class="news-meta">' + formatDate(p.published_at) + '</div>' +
+
+                buildShareBar(p.title, true) +
+
             '</div>' +
+
         '</div>';
+
     }).join('');
 
-    list.innerHTML = filtered.slice(3).map(function(n) {
-        return '<div class="news-list-item" onclick="openArticle(' + n.id + ')">' +
-            '<img src="' + n.imagen + '" alt="' + n.titulo + '" loading="lazy">' +
+    list.innerHTML = posts.slice(3).map(function(p) {
+
+        const img = buildImageUrl(p);
+
+        return '<div class="news-list-item" onclick="openArticle(\'' + escapeAttr(p.slug) + '\')">' +
+
+            '<img src="' + img + '" alt="' + p.title + '" loading="lazy">' +
+
             '<div>' +
-                '<span class="news-cat">' + n.categoriaLabel + '</span>' +
-                '<div class="news-title">' + n.titulo + '</div>' +
-                '<div class="news-meta">' + n.fecha + '</div>' +
-                buildShareBar(n.titulo, true) +
+
+                '<span class="news-cat">' + p.category + '</span>' +
+
+                '<div class="news-title">' + p.title + '</div>' +
+
+                '<div class="news-meta">' + formatDate(p.published_at) + '</div>' +
+
+                buildShareBar(p.title, true) +
+
             '</div>' +
+
         '</div>';
+
     }).join('');
+
 }
 
 /* ========================
@@ -201,63 +332,42 @@ function renderNews(filter) {
 ======================== */
 
 function renderSidebar() {
-    var container = document.getElementById('sidebarMostRead');
+
+    const container = document.getElementById('sidebarMostRead');
+
     if (!container) return;
 
-    container.innerHTML = state.noticias.slice(0, 4).map(function(n) {
-        return '<div class="sidebar-card" onclick="openArticle(' + n.id + ')">' +
-            '<img src="' + n.imagen + '" alt="' + n.titulo + '">' +
+    container.innerHTML = state.posts.slice(0, 4).map(function(p) {
+
+        const img = buildImageUrl(p);
+
+        return '<div class="sidebar-card" onclick="openArticle(\'' + escapeAttr(p.slug) + '\')">' +
+
+            '<img src="' + img + '" alt="' + p.title + '">' +
+
             '<div>' +
-                '<span class="news-cat">' + n.categoriaLabel + '</span>' +
-                '<div class="news-title">' + n.titulo + '</div>' +
+
+                '<span class="news-cat">' + p.category + '</span>' +
+
+                '<div class="news-title">' + p.title + '</div>' +
+
             '</div>' +
+
         '</div>';
+
     }).join('');
-}
 
-/* ========================
-   ARTICLE VIEW
-======================== */
-
-function openArticle(id) {
-    var noticia = findArticleById(id);
-    if (!noticia) return;
-
-    var related = state.noticias.filter(function(n) {
-        return String(n.id) !== String(id);
-    }).slice(0, 3);
-
-    var content = document.getElementById('articleContent');
-    if (!content) return;
-
-    content.innerHTML =
-        '<a class="article-back" onclick="goHome()">Volver</a>' +
-        '<span class="article-category">' + noticia.categoriaLabel + '</span>' +
-        '<h1 class="article-title">' + noticia.titulo + '</h1>' +
-        '<div class="article-meta">' +
-            '<strong>' + noticia.autor + '</strong> · ' + noticia.fecha +
-        '</div>' +
-        buildShareBar(noticia.titulo, false) +
-        '<img class="article-hero-img" src="' + noticia.imagen + '">' +
-        '<div class="article-body">' +
-            '<p><strong>' + noticia.extracto + '</strong></p>' +
-            noticia.cuerpo +
-        '</div>';
-
-    showSection('article');
 }
 
 /* ========================
    NAVIGATION
 ======================== */
 
-function goHome() {
-    showSection('home');
-}
+function openArticle(slug) {
 
-function filterCat(cat) {
-    renderNews(cat);
-    showSection('home');
+    window.location.href =
+        '/post.html?slug=' + encodeURIComponent(slug);
+
 }
 
 /* ========================
@@ -265,10 +375,18 @@ function filterCat(cat) {
 ======================== */
 
 function setDate() {
-    var el = document.getElementById('currentDate');
+
+    const el = document.getElementById('currentDate');
+
     if (!el) return;
-    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    el.textContent = new Date().toLocaleDateString('es-CO', options);
+
+    el.textContent = new Date().toLocaleDateString('es-CO', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
 }
 
 /* ========================
@@ -276,19 +394,29 @@ function setDate() {
 ======================== */
 
 function initTicker() {
-    var ticker = document.querySelector('.ticker-content');
+
+    const ticker = document.querySelector('.ticker-content');
+
     if (!ticker) return;
 
     ticker.style.display = 'inline-block';
-    var pos = window.innerWidth;
+
+    let pos = window.innerWidth;
 
     function move() {
+
         pos -= 1.5;
-        if (pos < -ticker.offsetWidth) pos = window.innerWidth;
+
+        if (pos < -ticker.offsetWidth)
+            pos = window.innerWidth;
+
         ticker.style.position = 'relative';
         ticker.style.left = pos + 'px';
+
         requestAnimationFrame(move);
+
     }
 
     move();
+
 }

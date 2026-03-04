@@ -1,0 +1,108 @@
+.app-post {
+    margin: auto;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.app-post .post-heading .post-image {
+    width: 100%;
+    aspect-ratio: 1.6;
+    object-fit: cover;
+}
+
+.app-post .post-category {
+    font-weight: 400;
+    font-size: 1.4em;
+    color: var(--app-highlight-color);
+}
+
+.app-post .post-title {
+    font-size: 2.4em;
+    font-weight: bold;
+    color: #000;
+    font-family: 'Roboto';
+} 
+
+.app-post .post-subtitle {
+    font-style: italic;
+    font-size: 1.1em;
+    font-weight: 300;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f1f1f1;
+    font-family: 'Roboto';
+}
+
+.app-post .post-content {
+    padding: 40px;
+    width: 95%;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: -100px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: hidden;
+}
+
+.app-post .post-html-content > * {
+    margin-bottom: 1.5em;
+    font-family: 'Roboto';
+}
+
+.app-post .post-html-content p {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.app-post .post-html-content {
+    margin-top: 20px;
+}
+
+.app-post .post-html-content .post-image {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.app-post .post-html-content .post-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+@media (max-width: 768px) {
+    .app-post {
+        padding: 0 10px;
+    }
+    .app-post .post-content {
+        margin-top: -40px !important;
+        width: 95%;
+        padding: 20px;
+    }
+    .app-post .post-title {
+        font-size: 1.8em;
+    }
+
+    .app-post .post-html-content iframe {
+        max-width: 100%;
+    }
+
+    
+}
+
+.app-post .post-html-content iframe[src*="youtube.com"],
+.app-post .post-html-content iframe[src*="youtu.be"] {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    max-width: 580px;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+}
