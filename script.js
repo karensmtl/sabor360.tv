@@ -364,16 +364,13 @@ function renderSidebar() {
 ======================== */
 
 function openArticle(slug) {
-
-    window.location.href =
-        '/post.html?slug=' + encodeURIComponent(slug);
-
+    window.location.href ='/post.html?slug=' + encodeURIComponent(slug);
 }
 
 /* ========================
    DATE
 ======================== */
-
+ 
 function setDate() {
 
     const el = document.getElementById('currentDate');
@@ -404,7 +401,6 @@ function initTicker() {
     let pos = window.innerWidth;
 
     function move() {
-
         pos -= 1.5;
 
         if (pos < -ticker.offsetWidth)
