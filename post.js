@@ -44,6 +44,7 @@ async function loadPost() {
         const post = await res.json();
 
         renderPost(post);
+        console.log('Post cargado:', post);
 
         updateMeta(post);
 
