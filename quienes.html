@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabor 360 - Gastronomia Colombiana</title>
+    <title>¿Quiénes Somos? - Sabor 360</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@300;400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Override: en esta página independiente, #page-quienes debe ser visible */
+        #page-quienes { display: block !important; }
+    </style>
 </head>
 <body>
 
@@ -37,12 +41,12 @@
     <nav>
         <div class="nav-inner">
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active" data-sec="home">Home</a></li>
-                <li><a href="index.html?cat=negocios" data-cat="negocios">Negocios</a></li>
-                <li><a href="index.html?cat=gestion" data-cat="gestion">Gesti&oacute;n</a></li>
-                <li><a href="podcast.html">Videos y Podcast</a></li>
-                <li><a href="quienes.html">&iquest;Qui&eacute;nes Somos?</a></li>
-                <li><a href="index.html?cat=eventos" data-cat="eventos">Eventos</a></li>
+                <li><a href="index.html" data-sec="home">Home</a></li>
+                <li><a href="index.html?cat=negocios" data-sec="home">Negocios</a></li>
+                <li><a href="index.html?cat=gestion" data-sec="home">Gesti&oacute;n</a></li>
+                <li><a href="podcast.html" data-sec="videos">Videos y Podcast</a></li>
+                <li><a href="quienes.html" class="active" data-sec="quienes">&iquest;Qui&eacute;nes Somos?</a></li>
+                <li><a href="index.html?cat=eventos" data-sec="home">Eventos</a></li>
             </ul>
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -51,69 +55,67 @@
     </nav>
 </header>
 
-<!-- HOME PAGE -->
-<div id="page-home">
-<div class="ticker-bar">
-    <span class="ticker-label">Ultima hora</span>
-    <div class="ticker-inner">
-        <span class="ticker-content">
-            Inundaciones en Cordoba amenazan precios de la carne &nbsp;|&nbsp;
-            McDonald's elimina sachets de salsa en Chile &nbsp;|&nbsp;
-            S. Pellegrino abre convocatoria 7ma edicion Young Chef Academy &nbsp;|&nbsp;
-            Qbano proyecta crecimiento de doble digito en 2026 &nbsp;|&nbsp;
-            Nuevo decreto Salario Minimo en debate
-        </span>
-    </div>
-</div>
-
-    <section class="slider-section">
-        <div class="slider-track" id="sliderTrack"></div>
-        <button class="slider-btn prev" onclick="slidePrev()">&#8592;</button>
-        <button class="slider-btn next" onclick="slideNext()">&#8594;</button>
-        <div class="slider-dots" id="sliderDots"></div>
-    </section>
-
-    <div class="date-bar">
-        <span id="currentDate"></span>
-        <span>Cali, Valle del Cauca &mdash; Colombia</span>
+<!-- QUIENES SOMOS PAGE -->
+<div id="page-quienes">
+    <div class="qs-hero-section">
+        <h1>Sabor 360</h1>
+        <h2>Somos El Ecosistema Gastron&oacute;mico de Colombia</h2>
+        <p class="qs-hero-quote">"&iquest;Sab&iacute;as que la gastronom&iacute;a no es solo comida, sino el motor cultural y econ&oacute;mico m&aacute;s din&aacute;mico de nuestra regi&oacute;n? Sin embargo, falta un espacio que conecte la t&eacute;cnica, la cultura, la nutrici&oacute;n y la historia en un solo ecosistema digital profesional. Bienvenidos a Sabor 360."</p>
     </div>
 
-    <div class="main-layout">
-        <main>
-            <div class="section-header">
-                <h2>Ultimas Noticias</h2>
-                <div class="section-line"></div>
-                <span class="cat-tag" id="activeFilterLabel">Todas</span>
+    <div class="qs-body">
+        <div class="qs-block">
+            <div class="qs-block-icon">&#128241;</div>
+            <div class="qs-block-text">
+                <h3>Visi&oacute;n</h3>
+                <p>"Queremos ser el medio multiplataforma (Instagram, TikTok, YouTube, Facebook) dise&ntilde;ado para ser el referente absoluto de la industria. No solo hablamos de comida; somos una central de contenidos con equipo t&eacute;cnico de alto nivel &mdash;c&aacute;maras, editores, sonidistas&mdash; puestos al servicio de la narrativa gastron&oacute;mica."</p>
             </div>
-            <div class="news-grid" id="newsGrid"></div>
-            <div class="section-header">
-                <h2>Mas Noticias</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="news-list" id="newsList"></div>
-        </main>
-        <aside class="sidebar">
-            <div class="sidebar-section">
-                <div class="section-header">
-                    <h2>Lo mas leido</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div id="sidebarMostRead"></div>
-            </div>
-            <div class="sidebar-section">
-                <div class="section-header">
-                    <h2>Eventos</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div id="sidebarEvents"></div>
-            </div>
-        </aside>
-    </div>
-</div>
+        </div>
 
-<!-- ARTICLE PAGE -->
-<div id="page-article" style="display:none;">
-    <div class="article-page" id="articleContent"></div>
+        <div class="qs-block">
+            <div class="qs-block-icon">&#127775;</div>
+            <div class="qs-block-text">
+                <h3>Dream Team y Contenido</h3>
+                <p>"Somos una comunidad con referentes como el <strong>Chef Carlos Yanguas</strong> en nuestro podcast semanal, la <strong>chef Catalina V&eacute;lez</strong>, la <strong>nutricionista Camila Duque</strong> entre otros. Nuestra agenda es total: desde el pulso de las noticias diarias y lanzamientos, eventos, hasta la profundidad de la cultura gastron&oacute;mica, el mundo del Sommelier, el barista y el turismo gastron&oacute;mico."</p>
+            </div>
+        </div>
+
+        <div class="qs-brand-note">
+            <p>Sabor360 es una marca de <strong>Televicentro del Valle SAS</strong>, empresa de multimedia con m&aacute;s de 40 a&ntilde;os en la industria audiovisual colombiana.</p>
+        </div>
+
+        <div class="qs-team-title">
+            <span class="qs-overline">Las personas detr&aacute;s</span>
+            <h3>Nuestro Equipo</h3>
+        </div>
+        <div class="qs-team-grid">
+            <div class="qs-team-card">
+                <img src="img/chef.jpg" alt="Chef Carlos Yanguas">
+                <h4>Chef Carlos Yanguas</h4>
+                <span class="qs-role">Chef Ejecutivo &amp; Co-fundador</span>
+                <p>Pionero de la Gastronom&iacute;a Regenerativa en el Valle del Cauca con m&aacute;s de 15 a&ntilde;os en la alta cocina colombiana.</p>
+            </div>
+            <div class="qs-team-card">
+                <img src="img/mujer.jpg" alt="Camila Duque">
+                <h4>Camila Duque</h4>
+                <span class="qs-role">Nutricionista &amp; Editora</span>
+                <p>Especialista en nutrici&oacute;n funcional y gastronom&iacute;a saludable, conectando ciencia y experiencia culinaria.</p>
+            </div>
+            <div class="qs-team-card">
+                <img src="img/mujerchef.jpeg" alt="Catalina Velez">
+                <h4>Chef Catalina V&eacute;lez</h4>
+                <span class="qs-role">Chef &amp; Colaboradora</span>
+                <p>Referente de la cocina colombiana moderna, con presencia constante en nuestro podcast y contenido en redes.</p>
+            </div>
+        </div>
+
+        <div class="qs-cifras">
+            <div><span class="qs-num">40+</span><span class="qs-label">A&ntilde;os en medios</span></div>
+            <div><span class="qs-num">500+</span><span class="qs-label">Art&iacute;culos publicados</span></div>
+            <div><span class="qs-num">15k+</span><span class="qs-label">Lectores mensuales</span></div>
+            <div><span class="qs-num">50+</span><span class="qs-label">Episodios de podcast</span></div>
+        </div>
+    </div>
 </div>
 
 <!-- FOOTER -->
@@ -158,23 +160,9 @@
 </footer>
 
 <script>
-// ── Leer parámetro ?cat= de la URL para activar filtro al cargar ──
-window.addEventListener('DOMContentLoaded', function () {
-    const params = new URLSearchParams(window.location.search);
-    const cat = params.get('cat');
-    if (cat && typeof filterCat === 'function') {
-        filterCat(cat);
-        // Marcar enlace activo en el nav
-        document.querySelectorAll('.nav-links a[data-cat]').forEach(a => {
-            if (a.dataset.cat === cat) a.classList.add('active');
-        });
-    }
-});
-
 function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
 }
 </script>
-<script src="script.js"></script>
 </body>
 </html>
