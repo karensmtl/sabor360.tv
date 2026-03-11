@@ -1,10 +1,11 @@
 .app-post {
     margin: auto;
-    max-width: 1080px;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
     padding: 20px;
     font-family: 'Roboto', sans-serif;
+    margin-top: 120px;
 }
 
 .app-post .post-heading .post-image {
