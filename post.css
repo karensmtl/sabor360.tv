@@ -158,3 +158,10 @@
     transform: translateY(-1px);
 
 }
+
+.post-share-btn img {
+
+    width: 18px;
+    height: 18px;
+
+}
