@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos | Sabor 360</title>
+    <link rel="stylesheet" href="./../styles.css">
+</head>
+
+<body>
+    <header>
+        <a href="/index.html">
+            <img src="img/logo.png">
+        </a>
+    </header>
+    <div id="page-videos">
+        <div class="extra-page-hero">
+            <h1>Videos y <span>Podcast</span></h1>
+            <p>Contenido audiovisual sobre gastronom&iacute;a colombiana, tendencias HORECA y entrevistas con
+                l&iacute;deres culinarios.</p>
+        </div>
+        <div class="extra-tabs-bar">
+            <button class="extra-tab-btn active" onclick="switchTab('videos', this)">&#9654; Videos</button>
+            <button class="extra-tab-btn" onclick="switchTab('podcast', this)">&#127908; Podcast</button>
+        </div>
+
+        <!-- TAB VIDEOS -->
+        <div class="extra-tab-content active" id="tab-videos">
+            <div class="extra-section">
+                <div class="section-header">
+                    <h2>Video Destacado</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="vid-featured">
+                    <div class="vid-embed" id="featuredVideoEmbed" data-videoid="TLCqabPNTLA">
+                        <div class="vid-placeholder" onclick="playVideo(this, 'TLCqabPNTLA', true)">
+                            <img src="https://img.youtube.com/vi/TLCqabPNTLA/maxresdefault.jpg" alt="Canal Sabor 360"
+                                class="vid-thumb-img" style="width:100%;height:100%;object-fit:cover;display:block;">
+                            <div class="vid-play-overlay">
+                                <div class="vid-play-btn">&#9654;</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vid-featured-info">
+                        <span class="vid-badge">Destacado</span>
+                        <h3>Canal Oficial Sabor 360 en YouTube</h3>
+                        <p>Explora todos nuestros videos sobre gastronom&iacute;a colombiana, recetas, entrevistas con
+                            chefs y tendencias HORECA desde el Valle del Cauca.</p>
+                        <a href="https://www.youtube.com/channel/UCkBqRKoYbaAb3osKBJeH33Q" target="_blank"
+                            class="vid-yt-btn">
+                            &#9654; Ver Canal en YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <div class="section-header" style="margin-top:2.5rem;">
+                    <h2>Mas Videos</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="vid-grid">
+                    <div class="vid-card">
+                        <div class="vid-thumb-wrap" data-videoid="QgIXLpEwuLM">
+                            <div class="vid-placeholder" onclick="playVideo(this, 'QgIXLpEwuLM', false)">
+                                <img src="https://img.youtube.com/vi/QgIXLpEwuLM/mqdefault.jpg" alt="Como abrir un coco"
+                                    class="vid-thumb-img"
+                                    style="width:100%;height:100%;object-fit:cover;display:block;">
+                                <div class="vid-play-overlay">
+                                    <div class="vid-play-btn small">&#9654;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vid-card-info">
+                            <span class="vid-badge">T&eacute;cnicas</span>
+                            <h3>C&oacute;mo abrir un coco</h3>
+                            <p>F&aacute;cil y r&aacute;pido.</p>
+                        </div>
+                    </div>
+                    <div class="vid-card">
+                        <div class="vid-thumb-wrap" data-videoid="ZeE7Wisrc6o">
+                            <div class="vid-placeholder" onclick="playVideo(this, 'ZeE7Wisrc6o', false)">
+                                <img src="https://img.youtube.com/vi/ZeE7Wisrc6o/mqdefault.jpg"
+                                    alt="Como cortar una sandia" class="vid-thumb-img"
+                                    style="width:100%;height:100%;object-fit:cover;display:block;">
+                                <div class="vid-play-overlay">
+                                    <div class="vid-play-btn small">&#9654;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vid-card-info">
+                            <span class="vid-badge">T&eacute;cnicas</span>
+                            <h3>C&oacute;mo cortar una sand&iacute;a</h3>
+                            <p>Aprende la t&eacute;cnica correcta para estabilizar y cortar frutas grandes de forma
+                                segura.</p>
+                        </div>
+                    </div>
+                    <div class="vid-card">
+                        <div class="vid-thumb-wrap" data-videoid="ybwSqqDtZeM">
+                            <div class="vid-placeholder" onclick="playVideo(this, 'ybwSqqDtZeM', false)">
+                                <img src="https://img.youtube.com/vi/ybwSqqDtZeM/mqdefault.jpg" alt="El Mejor Chef"
+                                    class="vid-thumb-img"
+                                    style="width:100%;height:100%;object-fit:cover;display:block;">
+                                <div class="vid-play-overlay">
+                                    <div class="vid-play-btn small">&#9654;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vid-card-info">
+                            <span class="vid-badge">T&eacute;cnicas</span>
+                            <h3>El Mejor Chef de cada Pa&iacute;s TOPS</h3>
+                            <p>Los mejores cocineros de M&eacute;xico, Colombia y Espa&ntilde;a participan en programas
+                                como MasterChef.</p>
+                        </div>
+                    </div>
+                    <div class="vid-card">
+                        <div class="vid-thumb-wrap" data-videoid="CzWo9ariWmc">
+                            <div class="vid-placeholder" onclick="playVideo(this, 'CzWo9ariWmc', false)">
+                                <img src="https://img.youtube.com/vi/CzWo9ariWmc/mqdefault.jpg" alt="Croquetas de Tamal"
+                                    class="vid-thumb-img"
+                                    style="width:100%;height:100%;object-fit:cover;display:block;">
+                                <div class="vid-play-overlay">
+                                    <div class="vid-play-btn small">&#9654;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vid-card-info">
+                            <span class="vid-badge">T&eacute;cnicas</span>
+                            <h3>Croquetas de Tamal de Pipi&aacute;n</h3>
+                            <p>Congreso Gastron&oacute;mico de Popayn.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB PODCAST -->
+        <div class="extra-tab-content" id="tab-podcast">
+            <div class="extra-section">
+                <div class="pod-banner">
+                    <div>
+                        <h2>Sabor 360 Podcast</h2>
+                        <p>Conversaciones profundas sobre gastronom&iacute;a, negocios HORECA, tendencias culinarias y
+                            los protagonistas que transforman la cocina colombiana. Disponible en todas las plataformas.
+                        </p>
+                    </div>
+                    <div class="pod-platforms">
+                        <a href="#" class="pod-plat-btn">&#127925; Escuchar en Spotify</a>
+                        <a href="https://www.youtube.com/channel/UCkBqRKoYbaAb3osKBJeH33Q" target="_blank"
+                            class="pod-plat-btn pod-yt">&#9654; Ver en YouTube</a>
+                    </div>
+                </div>
+                <div class="section-header">
+                    <h2>Episodios Recientes</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="pod-list">
+                    <div class="pod-card">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&h=140&fit=crop"
+                            alt="Ep1">
+                        <div class="pod-info">
+                            <div class="pod-num">Episodio 01 &middot; 14 Feb 2026</div>
+                            <div class="pod-title">S. Pellegrino Young Chef: el futuro de la alta cocina</div>
+                            <div class="pod-desc">Conversamos con chefs colombianos participantes del concurso mas
+                                importante para jovenes talentos culinarios.</div>
+                            <div class="pod-meta">&#9201; 45 min &middot; Sabor 360</div>
+                        </div>
+                        <a href="https://www.youtube.com/channel/UCkBqRKoYbaAb3osKBJeH33Q" target="_blank"
+                            class="pod-play">&#9654;</a>
+                    </div>
+                    <div class="pod-card">
+                        <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=200&h=140&fit=crop"
+                            alt="Ep2">
+                        <div class="pod-info">
+                            <div class="pod-num">Episodio 02 &middot; 10 Feb 2026</div>
+                            <div class="pod-title">Gastronom&iacute;a Regenerativa con el Chef Carlos Yanguas</div>
+                            <div class="pod-desc">El chef vallecaucano nos habla sobre como la trazabilidad del
+                                productor al plato esta transformando la cocina colombiana.</div>
+                            <div class="pod-meta">&#9201; 52 min &middot; Sabor 360</div>
+                        </div>
+                        <a href="https://www.youtube.com/channel/UCkBqRKoYbaAb3osKBJeH33Q" target="_blank"
+                            class="pod-play">&#9654;</a>
+                    </div>
+                    <div class="pod-card">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&h=140&fit=crop"
+                            alt="Ep3">
+                        <div class="pod-info">
+                            <div class="pod-num">Episodio 03 &middot; 5 Feb 2026</div>
+                            <div class="pod-title">Como sobrevivir al alza del precio de la carne</div>
+                            <div class="pod-desc">Estrategias practicas para restaurantes y negocios HORECA ante la
+                                presion de costos en proteinas.</div>
+                            <div class="pod-meta">&#9201; 38 min &middot; Sabor 360</div>
+                        </div>
+                        <a href="https://www.youtube.com/channel/UCkBqRKoYbaAb3osKBJeH33Q" target="_blank"
+                            class="pod-play">&#9654;</a>
+                    </div>
+                    <div class="pod-card">
+                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=200&h=140&fit=crop"
+                            alt="Ep4">
+                        <div class="pod-info">
+                            <div class="pod-num">Episodio 04 &middot; 28 Ene 2026</div>
+                            <div class="pod-title">Franquicias colombianas: el caso Qbano</div>
+                            <div class="pod-desc">Analisis del modelo de franquicia en la industria de comida rapida
+                                colombiana y las claves de su exito.</div>
+                            <div class="pod-meta">&#9201; 41 min &middot; Sabor 360</div>
+                        </div>
+                        <a href="https://www.youtube.com/channel/UCkBqRKoYbaAb3osKBJeH33Q" target="_blank"
+                            class="pod-play">&#9654;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Sabor 360</p>
+    </footer>
+</body>
+
+</html>
