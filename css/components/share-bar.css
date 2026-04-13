@@ -1,3 +1,4 @@
+/* ========================
    SHARE BAR EN CARDS
 ======================== */
 .news-share-bar {
@@ -31,9 +32,10 @@
     transition: background 0.2s, color 0.2s;
 }
 
+.news-share-bar a svg { display: block; }
 .news-share-bar a:hover { background: var(--orange); color: white; }
 .news-share-bar a.fb:hover { background: #1877f2; color: white; }
-
+.news-share-bar a.wa:hover { background: #25d366; color: white; }
 .news-share-bar a.yt:hover { background: #ff0000; color: white; }
 
 /* List cards */

@@ -1,14 +1,12 @@
 /* ========================
    Sabor 360 · Main stylesheet
-   Orden de carga: base → layout → componentes → páginas → responsive
+   Orden de carga idéntico al monolito original
 ======================== */
 
 @import url('base/reset.css');
 
-@import url('layout/page.css');
-
 @import url('components/header.css');
-@import url('components/footer.css');
+@import url('layout/page.css');
 @import url('components/date-bar.css');
 @import url('components/slider.css');
 @import url('components/ticker.css');
@@ -16,10 +14,10 @@
 @import url('components/news-grid.css');
 @import url('components/share-bar.css');
 @import url('components/sidebar.css');
+@import url('pages/article.css');
+@import url('components/footer.css');
 @import url('components/page-hero.css');
 @import url('components/tabs.css');
-
-@import url('pages/article.css');
 @import url('pages/video.css');
 @import url('pages/podcast.css');
 @import url('pages/quienes.css');

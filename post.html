@@ -3,19 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artículo</title>
-    <link rel="stylesheet" href="post.css">
-    <link rel="stylesheet" href="css/main.css">
+
+    <title data-meta="title">Sabor 360 · Gastronomía Colombiana</title>
+    <meta name="description" data-meta="description" content="Noticias gastronómicas y comunidad HORECA en Colombia.">
+    <meta name="author" data-meta="author" content="Sabor 360">
+    <meta name="keywords" content="gastronomía, Colombia, HORECA, restaurantes, chefs, noticias">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" data-meta="canonical" href="https://sabor360.tv/">
+
+    <meta property="og:site_name" content="Sabor 360">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:type" data-meta="og:type" content="website">
+    <meta property="og:title" data-meta="og:title" content="Sabor 360">
+    <meta property="og:description" data-meta="og:description" content="Noticias gastronómicas y comunidad HORECA en Colombia.">
+    <meta property="og:url" data-meta="og:url" content="https://sabor360.tv/">
+    <meta property="og:image" data-meta="og:image" content="https://sabor360.tv/img/logo.png">
+    <meta property="og:image:alt" data-meta="og:image:alt" content="Sabor 360">
+    <meta property="article:published_time" data-meta="article:published_time" content="">
+    <meta property="article:author" data-meta="article:author" content="Sabor 360">
+    <meta property="article:section" data-meta="article:section" content="">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@sabor360">
+    <meta name="twitter:title" data-meta="twitter:title" content="Sabor 360">
+    <meta name="twitter:description" data-meta="twitter:description" content="Noticias gastronómicas y comunidad HORECA en Colombia.">
+    <meta name="twitter:image" data-meta="twitter:image" content="https://sabor360.tv/img/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://sabor360.tv">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@300;400;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/post.css">
+
+    <script type="application/ld+json" data-meta="jsonld">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Sabor 360",
+        "url": "https://sabor360.tv/"
+    }
+    </script>
 </head>
 <body data-page="post">
 
 <div data-partial="header"></div>
 
-<div id="postApp" class="app-post"></div>
+<main id="postApp" class="post"></main>
+
+<section class="featured" aria-label="Artículos relacionados">
+    <div class="featured__inner">
+        <div class="featured__brand">
+            <img src="/img/logo.png" alt="Sabor 360" class="featured__brand-logo">
+        </div>
+        <div class="featured__grid" id="postFeatured"></div>
+    </div>
+</section>
 
 <div data-partial="footer"></div>
 
-<script type="module" src="js/main.js"></script>
-<script src="post.js"></script>
+<script type="module" src="/js/main.js"></script>
+<script src="/post.js"></script>
 </body>
 </html>

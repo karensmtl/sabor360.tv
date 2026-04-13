@@ -12,7 +12,7 @@ export async function loadPartial(selector, url) {
 
 export async function loadLayout() {
     await Promise.all([
-        loadPartial('[data-partial="header"]', 'partials/header.html'),
-        loadPartial('[data-partial="footer"]', 'partials/footer.html'),
+        loadPartial('[data-partial="header"]', '/partials/header.html'),
+        loadPartial('[data-partial="footer"]', '/partials/footer.html'),
     ]);
 }
