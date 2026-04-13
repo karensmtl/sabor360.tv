@@ -1,0 +1,28 @@
+   SIDEBAR
+======================== */
+.sidebar {}
+
+.sidebar-section { margin-bottom: 2rem; }
+
+.sidebar-card {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0.8rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.sidebar-card:hover { opacity: 0.75; }
+.sidebar-card:last-child { border-bottom: none; }
+
+.sidebar-card img {
+    width: 80px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.sidebar-card .news-title { font-size: 0.82rem; }
+

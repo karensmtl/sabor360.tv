@@ -1,0 +1,148 @@
+   HERO SLIDER — MÁS DELGADO
+======================== */
+.slider-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--dark);
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    height: 340px; /* ANTES: 520px */
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 6s ease;
+}
+
+.slide:hover img { transform: scale(1.04); }
+
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(26,18,9,0.92) 0%,
+        rgba(90,122,26,0.25) 60%,
+        rgba(200,66,26,0.15) 100%
+    );
+}
+
+/* Franja decorativa con colores del logo */
+.slide-overlay::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: green
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 0; left: 0;
+    padding: 1.8rem 2.5rem;
+    max-width: 650px;
+}
+
+.slide-category {
+    display: inline-block;
+    background: var(--green2);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    border-radius: 2px;
+    margin-bottom: 0.6rem;
+}
+
+.slide-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.slide-desc {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.slide-date {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.5rem;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(200,66,26,0.3);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(200,66,26,0.5);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 10;
+}
+
+.slider-btn:hover { background: var(--orange); border-color: var(--orange); }
+.slider-btn.prev { left: 1.2rem; }
+.slider-btn.next { right: 1.2rem; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 0.8rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0.4rem;
+    z-index: 10;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: var(--orange);
+    width: 18px;
+    border-radius: 3px;
+}
+
