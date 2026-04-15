@@ -1,16 +1,20 @@
+# Página de error 404 personalizada
+ErrorDocument 404 /404.html
+
 # Activar mod_rewrite
 
 RewriteEngine On
 
-# Fallback: si /post/<slug> NO tiene un archivo prerenderizado,
+# Fallback: si /post/<slug> no tiene archivo prerenderizado,
 # servirlo dinámicamente vía /post.html?slug=<slug>.
-# END detiene toda reescritura para evitar loops con la regla legacy.
+# Marca env POST_FALLBACK para bloquear loops con la regla legacy.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html !-f
-RewriteRule ^post/([^/.]+)/?$ /post.html?slug=$1 [L,QSA,END]
+RewriteRule ^post/([^/.]+)/?$ /post.html?slug=$1 [L,QSA,E=POST_FALLBACK:1]
 
-# Legacy: /post.html?slug=xxx -> /post/xxx (solo en requests externos)
-RewriteCond %{ENV:REDIRECT_STATUS} ^$
+# Legacy: /post.html?slug=xxx -> /post/xxx (no corre en rewrites internas)
+RewriteCond %{ENV:POST_FALLBACK} !=1
+RewriteCond %{ENV:REDIRECT_POST_FALLBACK} !=1
 RewriteCond %{QUERY_STRING} ^slug=([^&]+)
 RewriteRule ^post\.html$ /post/%1? [R=301,L]
 
@@ -21,6 +25,8 @@ RewriteCond %{REQUEST_FILENAME} !-f
 
 # Redirigir de .html a la URL sin extensión
 
+RewriteCond %{ENV:POST_FALLBACK} !=1
+RewriteCond %{ENV:REDIRECT_POST_FALLBACK} !=1
 RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
 RewriteRule ^ /%1 [R=301,L]
 
