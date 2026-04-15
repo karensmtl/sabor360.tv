@@ -2,7 +2,15 @@
 
 RewriteEngine On
 
-# Legacy: /post.html?slug=xxx -> /post/xxx (permanente)
+# Fallback: si /post/<slug> NO tiene un archivo prerenderizado,
+# servirlo dinámicamente vía /post.html?slug=<slug>.
+# END detiene toda reescritura para evitar loops con la regla legacy.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html !-f
+RewriteRule ^post/([^/.]+)/?$ /post.html?slug=$1 [L,QSA,END]
+
+# Legacy: /post.html?slug=xxx -> /post/xxx (solo en requests externos)
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{QUERY_STRING} ^slug=([^&]+)
 RewriteRule ^post\.html$ /post/%1? [R=301,L]
 
