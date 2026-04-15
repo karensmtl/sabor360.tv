@@ -25,8 +25,15 @@
         });
     }
 
+    const IS_LOCAL = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+
     function canonicalUrl(slug) {
         return SITE + '/post/' + encodeURIComponent(slug);
+    }
+
+    function postHref(slug) {
+        const encoded = encodeURIComponent(slug);
+        return IS_LOCAL ? '/post.html?slug=' + encoded : '/post/' + encoded;
     }
 
     function stripHtml(html) {
@@ -166,7 +173,7 @@
 
         container.innerHTML = pick.map(p => {
             const img = buildImageUrl(p, 0);
-            const href = '/post.html?slug=' + encodeURIComponent(p.slug);
+            const href = postHref(p.slug);
             return `<a class="featured__card" href="${href}">
                 <img class="featured__card-img" src="${img}" alt="${p.title || ''}" loading="lazy">
                 <div class="featured__card-body">

@@ -3,8 +3,13 @@ export function toggleMenu() {
     if (nav) nav.classList.toggle('open');
 }
 
+const IS_LOCAL = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+
 export function openArticle(slug) {
-    window.location.href = '/post.html?slug=' + encodeURIComponent(slug);
+    const encoded = encodeURIComponent(slug);
+    window.location.href = IS_LOCAL
+        ? '/post.html?slug=' + encoded
+        : '/post/' + encoded;
 }
 
 export function initNav() {

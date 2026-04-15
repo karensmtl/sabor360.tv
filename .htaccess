@@ -1,39 +1,27 @@
 # Página de error 404 personalizada
 ErrorDocument 404 /404.html
 
-# Activar mod_rewrite
-
 RewriteEngine On
 
-# Fallback: si /post/<slug> no tiene archivo prerenderizado,
-# servirlo dinámicamente vía /post.html?slug=<slug>.
-# Marca env POST_FALLBACK para bloquear loops con la regla legacy.
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME}.html !-f
-RewriteRule ^post/([^/.]+)/?$ /post.html?slug=$1 [L,QSA,E=POST_FALLBACK:1]
-
-# Legacy: /post.html?slug=xxx -> /post/xxx (no corre en rewrites internas)
-RewriteCond %{ENV:POST_FALLBACK} !=1
-RewriteCond %{ENV:REDIRECT_POST_FALLBACK} !=1
-RewriteCond %{QUERY_STRING} ^slug=([^&]+)
-RewriteRule ^post\.html$ /post/%1? [R=301,L]
-
-# Evitar conflictos con directorios reales
-
+# 1) Redirigir /algo.html -> /algo (URL limpia), EXCEPTO /post.html que
+#    recibe ?slug= como dispatcher dinámico.
+RewriteCond %{REQUEST_URI} !^/post\.html$
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-
-# Redirigir de .html a la URL sin extensión
-
-RewriteCond %{ENV:POST_FALLBACK} !=1
-RewriteCond %{ENV:REDIRECT_POST_FALLBACK} !=1
-RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
+RewriteCond %{THE_REQUEST} \s/([^.\s]+)\.html [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-# Cargar automáticamente el archivo .html si existe
-
+# 2) Auto-append .html si el archivo existe (sirve las URLs limpias como
+#    /quienes, /podcast, /post/<slug> prerenderizado, etc.)
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^.]+)$ $1.html [L]
+
+# 3) Fallback: /post/<slug> sin archivo prerenderizado -> servirlo
+#    dinámicamente vía /post.html?slug=<slug>. Rewrite interno, la URL
+#    limpia se conserva en la barra del navegador.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html !-f
+RewriteRule ^post/([^/.]+)/?$ /post.html?slug=$1 [L,QSA]
 
 # Compresión
 <IfModule mod_deflate.c>

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk 'NR>=1 && NR<=50' \"c:/Users/S. Triana/Documents/job/televicentro/sabor360/styles.css\")",
+      "Bash(awk '/^\\\\/\\\\* =+/{getline x; gsub\\(/[ \\\\t]*$/,\"\",x\\); print NR\": \"x}' \"c:/Users/S. Triana/Documents/job/televicentro/sabor360/styles.css\")",
+      "Bash(mkdir -p css/base css/components css/layout css/pages js/core js/modules js/pages partials)",
+      "Bash(awk 'NR>=1 && NR<=26' styles.css)",
+      "Bash(awk 'NR>=28 && NR<=140' styles.css)",
+      "Bash(awk 'NR>=899 && NR<=918' styles.css)",
+      "Bash(awk 'NR>=142 && NR<=149' styles.css)",
+      "Bash(awk 'NR>=120 && NR<=170 {print NR\": \"$0}' \"c:/Users/S. Triana/Documents/job/televicentro/sabor360/quienes.html\")",
+      "Bash(awk 'NR>=218 && NR<=298 {print NR\": \"$0}' \"c:/Users/S. Triana/Documents/job/televicentro/sabor360/podcast.html\")",
+      "Bash(awk 'NR>=57 && NR<=120' quienes.html)",
+      "Bash(awk 'NR>=57 && NR<=218' podcast.html)",
+      "Read(//tmp/**)"
+    ]
+  }
+}
