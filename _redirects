@@ -1,0 +1,8 @@
+# Netlify / Cloudflare Pages / Render URL rewrites
+# Hosting alternativo (si migras desde Apache)
+
+# Legacy: /post.html?slug=xxx -> /post/xxx
+/post.html /post/:slug 301 slug=:slug
+
+# Servir /post/<slug> desde el archivo .html
+/post/:slug /post/:slug.html 200

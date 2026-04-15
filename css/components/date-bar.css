@@ -1,0 +1,14 @@
+/* ========================
+   DATE BAR
+======================== */
+.date-bar {
+    background: var(--light-gray);
+    border-bottom: 1px solid var(--border);
+    padding: 0.4rem 2rem;
+    font-size: 0.75rem;
+    color: var(--gray);
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
+

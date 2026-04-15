@@ -1,0 +1,184 @@
+/* ========================
+   ARTICLE PAGE
+======================== */
+.article-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+}
+
+.article-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--orange);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: gap 0.2s;
+    text-decoration: none;
+}
+
+.article-back:hover { gap: 0.8rem; }
+
+.article-category {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--dark);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.82rem;
+    color: var(--gray);
+    padding: 1rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+
+.article-meta strong { color: var(--dark); }
+
+/* SHARE BAR ARTÍCULO */
+.article-share-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 3px solid var(--dark);
+    margin-bottom: 1.5rem;
+}
+
+.article-share-bar span {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-right: 0.3rem;
+}
+
+.article-share-bar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--light-gray);
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all 0.2s;
+    border: 1px solid var(--border);
+}
+
+.article-share-bar a:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.article-share-bar a.fb { background: #e8f0fe; color: #1877f2; }
+.article-share-bar a.fb:hover { background: #1877f2; color: white; }
+.article-share-bar a.ig { background: #fce4ec; color: #c13584; }
+.article-share-bar a.ig:hover { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366); color: white; }
+.article-share-bar a.wa { background: #e8f5e9; color: #25d366; }
+.article-share-bar a.wa:hover { background: #25d366; color: white; }
+.article-share-bar a.yt { background: #ffebee; color: #ff0000; }
+.article-share-bar a.yt:hover { background: #ff0000; color: white; }
+
+.article-hero-img {
+    width: 100%;
+    max-height: 460px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.article-img-caption {
+    font-size: 0.78rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.article-body {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #333;
+}
+
+.article-body p { margin-bottom: 1.4rem; }
+
+.article-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 2rem 0 0.8rem;
+}
+
+.article-body strong { color: var(--dark); }
+
+.article-body blockquote {
+    border-left: 4px solid var(--orange);
+    padding: 0.8rem 1.5rem;
+    margin: 1.5rem 0;
+    background: #fff8f4;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--mid);
+}
+
+/* Related */
+.related-section {
+    border-top: 3px solid var(--dark);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+}
+
+.related-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+.related-card {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.related-card:hover { opacity: 0.75; }
+
+.related-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.related-card .news-title { font-size: 0.88rem; }
+

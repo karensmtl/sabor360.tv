@@ -1,0 +1,46 @@
+/* ========================
+   TABS BAR
+======================== */
+.extra-tabs-bar {
+    background: #1a1a1a;
+    display: flex;
+    border-bottom: 3px solid var(--orange);
+    overflow-x: auto;
+}
+
+.extra-tab-btn {
+    background: none;
+    border: none;
+    color: #888;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.9rem 2rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+}
+
+.extra-tab-btn:hover { color: var(--white); }
+
+.extra-tab-btn.active {
+    color: var(--orange);
+    border-bottom-color: var(--orange);
+}
+
+/* ========================
+   TAB CONTENT
+======================== */
+.extra-tab-content { display: none; }
+.extra-tab-content.active { display: block; }
+
+.extra-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+}
+

@@ -1,0 +1,66 @@
+/* ========================
+   SHARE BAR EN CARDS
+======================== */
+.news-share-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border);
+}
+
+.news-share-bar span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-right: 0.2rem;
+}
+
+.news-share-bar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--light-gray);
+    color: var(--gray);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.news-share-bar a svg { display: block; }
+.news-share-bar a:hover { background: var(--orange); color: white; }
+.news-share-bar a.fb:hover { background: #1877f2; color: white; }
+.news-share-bar a.wa:hover { background: #25d366; color: white; }
+.news-share-bar a.yt:hover { background: #ff0000; color: white; }
+
+/* List cards */
+.news-list-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.news-list-item:hover { opacity: 0.75; }
+.news-list-item:last-child { border-bottom: none; }
+
+.news-list-item img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.news-list-item .news-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+

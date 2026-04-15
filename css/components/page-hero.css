@@ -1,0 +1,30 @@
+/* ========================
+   EXTRA PAGE HERO
+======================== */
+.extra-page-hero {
+    background: linear-gradient(135deg, var(--dark) 0%, #2a1a08 50%, #1a2009 100%);
+    padding: 4rem 2rem 3.5rem;
+    text-align: center;
+    border-bottom: 3px solid var(--orange);
+}
+
+.extra-page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -1.5px;
+    margin-bottom: 0.8rem;
+}
+
+.extra-page-hero h1 span { color: var(--orange); }
+
+.extra-page-hero p {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem;
+    color: #999;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+

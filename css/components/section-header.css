@@ -1,0 +1,37 @@
+/* ========================
+   SECTION HEADERS
+======================== */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 3px solid var(--dark);
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+}
+
+.section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.section-header .cat-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    border: 1.5px solid var(--orange);
+    padding: 0.2rem 0.7rem;
+    border-radius: 2px;
+}
+

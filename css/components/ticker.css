@@ -1,0 +1,38 @@
+/* ========================
+   TICKER
+======================== */
+.ticker-bar {
+    background: var(--green2);
+    color: white;
+    padding: 0.5rem 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.ticker-inner {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-label {
+    background: var(--dark);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.2rem 0.8rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.ticker-content {
+    font-size: 0.82rem;
+    font-weight: 500;
+    display: inline-block;
+}
+

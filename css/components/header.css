@@ -1,0 +1,135 @@
+/* ========================
+   HEADER
+======================== */
+header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    background: var(--dark);
+    z-index: 1000;
+    border-bottom: 3px solid var(--orange);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* LOGO IMAGEN */
+.logo-area {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(200,66,26,0.3));
+    transition: transform 0.2s;
+}
+
+.logo-img:hover { transform: scale(1.04); }
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn-suscribirse {
+    background: var(--orange);
+    color: white;
+    padding: 0.45rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-suscribirse:hover { background: var(--orange2); }
+
+nav {
+    border-top: 1px solid #2a2a2a;
+    background: linear-gradient(90deg, #1a1209 0%, #2a1a08 50%, #1a2009 100%);
+}
+
+.nav-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0;
+}
+
+.nav-links a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.7rem 1.1rem;
+    transition: color 0.2s, background 0.2s;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--white);
+    background: rgba(130, 0, 0, 0.0);
+    border-bottom-color: var(--orange);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0.5rem;
+    margin-left: auto;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    transition: 0.3s;
+}
+
+/* ========================
+   HEADER SOCIAL
+======================== */
+.header-social {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.header-social a {
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.header-social a:hover { color: var(--orange); }
+
+@media (max-width: 480px) { .header-social { display: none; } }
+

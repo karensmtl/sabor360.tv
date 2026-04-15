@@ -1,0 +1,26 @@
+:root {
+    --orange: #c8421a;
+    --orange2: #e8621a;
+    --green: #a1ea0f;
+    --green2: #7aaa2a;
+    --gold: #c9a961;
+    --dark: #1a1209;
+    --mid: #2c2c2c;
+    --gray: #666;
+    --light-gray: #f0f0f0;
+    --white: #ffffff;
+    --border: #e0e0e0;
+    --accent-red: #c8421a;
+    --accent-green: #a4f600;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--mid);
+    background: var(--white);
+    overflow-x: hidden;
+}
+

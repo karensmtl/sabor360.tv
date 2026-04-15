@@ -1,18 +1,33 @@
-# Activar mod_rewrite
+# Página de error 404 personalizada
+ErrorDocument 404 /404.html
 
 RewriteEngine On
 
-# Evitar conflictos con directorios reales
-
+# URLs limpias: /quienes.html -> /quienes, /podcast.html -> /podcast
+# NOTA: esta regla solo dispara cuando el archivo .html no es el request
+# actual, y como /post.html sí es archivo real, sigue sirviéndose directo
+# con su query string ?slug=xxx sin interferencias.
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-
-# Redirigir de .html a la URL sin extensión
-
-RewriteCond %{THE_REQUEST} \s/([^.]+).html [NC]
+RewriteCond %{THE_REQUEST} \s/([^.\s]+)\.html [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-# Cargar automáticamente el archivo .html si existe
-
+# Auto-append .html si el archivo existe
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^.]+)$ $1.html [L]
+
+# Compresión
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Cache estático
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+</IfModule>
