@@ -1,6 +1,5 @@
 import { API_POSTS } from '../core/config.js';
 import { state } from '../core/state.js';
-import { buildSlider, initSliderControls } from '../modules/slider.js';
 import { renderNews, filterCat } from '../modules/news.js';
 import { renderSidebar } from '../modules/sidebar.js';
 import { setDate } from '../modules/date.js';
@@ -18,7 +17,6 @@ function applyUrlFilter() {
 export async function initHome() {
     setDate();
     initTicker();
-    initSliderControls();
 
     try {
         const res = await fetch(API_POSTS);
@@ -28,7 +26,6 @@ export async function initHome() {
         state.posts = [];
     }
 
-    buildSlider();
     renderNews();
     renderSidebar();
     applyUrlFilter();
