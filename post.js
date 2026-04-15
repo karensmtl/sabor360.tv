@@ -5,10 +5,7 @@
     const CDN = SITE + '/api/global/cdn';
 
     function getSlug() {
-        const qs = new URLSearchParams(window.location.search).get('slug');
-        if (qs) return qs;
-        const m = window.location.pathname.match(/\/post\/([^\/]+?)(?:\.html)?$/);
-        return m ? decodeURIComponent(m[1]) : null;
+        return new URLSearchParams(window.location.search).get('slug');
     }
 
     function buildImageUrl(post, sizeIndex = 2) {
@@ -25,15 +22,12 @@
         });
     }
 
-    const IS_LOCAL = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
-
     function canonicalUrl(slug) {
-        return SITE + '/post/' + encodeURIComponent(slug);
+        return SITE + '/post.html?slug=' + encodeURIComponent(slug);
     }
 
     function postHref(slug) {
-        const encoded = encodeURIComponent(slug);
-        return IS_LOCAL ? '/post.html?slug=' + encoded : '/post/' + encoded;
+        return '/post.html?slug=' + encodeURIComponent(slug);
     }
 
     function stripHtml(html) {

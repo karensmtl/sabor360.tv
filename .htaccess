@@ -3,25 +3,18 @@ ErrorDocument 404 /404.html
 
 RewriteEngine On
 
-# 1) Redirigir /algo.html -> /algo (URL limpia), EXCEPTO /post.html que
-#    recibe ?slug= como dispatcher dinámico.
-RewriteCond %{REQUEST_URI} !^/post\.html$
+# URLs limpias: /quienes.html -> /quienes, /podcast.html -> /podcast
+# NOTA: esta regla solo dispara cuando el archivo .html no es el request
+# actual, y como /post.html sí es archivo real, sigue sirviéndose directo
+# con su query string ?slug=xxx sin interferencias.
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{THE_REQUEST} \s/([^.\s]+)\.html [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-# 2) Auto-append .html si el archivo existe (sirve las URLs limpias como
-#    /quienes, /podcast, /post/<slug> prerenderizado, etc.)
+# Auto-append .html si el archivo existe
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^.]+)$ $1.html [L]
-
-# 3) Fallback: /post/<slug> sin archivo prerenderizado -> servirlo
-#    dinámicamente vía /post.html?slug=<slug>. Rewrite interno, la URL
-#    limpia se conserva en la barra del navegador.
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME}.html !-f
-RewriteRule ^post/([^/.]+)/?$ /post.html?slug=$1 [L,QSA]
 
 # Compresión
 <IfModule mod_deflate.c>
